@@ -1,0 +1,6 @@
+// Background image
+@mixin bg-image($bg-position:center,$bg-size:cover){
+    background-repeat: no-repeat;
+    background-position: $bg-position;
+    background-size: $bg-size;
+}

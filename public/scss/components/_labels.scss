@@ -1,0 +1,26 @@
+//
+// Labels
+// ******************
+.label-sm{
+    font-size: $font-size-sm;
+}
+.label-la{
+    font-size: $font-size-la;
+}
+.label-el{
+    font-size: $font-size-el;
+}
+
+.tag {
+    font-size: 85%;
+    line-height: 1.4;
+    font-weight: 300;
+    border-radius: 0px;
+    margin: 2px 2px;
+    display: inline-block;
+    padding: .5rem 1rem .5rem;
+    color: $white-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}

@@ -1,0 +1,823 @@
+// Form
+// *******************
+.form-panel{
+    margin-bottom: $form-panel-margin-bottom;
+    position: relative;
+
+    &.error{
+        .input-panel{
+            border-color: $error-color;   
+            color: $error-color;
+        }
+        .input-icon{
+            color: $error-color;
+        }
+        .error-message{
+            display: block;
+        }
+    }
+
+}
+
+//Placeholder animation .form-group.input-focus .form-control{border-color: #fecc2f; }
+.form-placeholder{
+    padding-top: $form-placeholder-padding-top;
+    .input-panel{
+        background-color: transparent;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        @include border-radius(0 !important);
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        position: relative;
+        z-index: 200;
+        // Placeholder
+        @include input-placeholder{
+            color: transparent;
+        }
+    }
+    label { 
+        left: 0; 
+        position: absolute; 
+        margin: 0;
+        top: $form-placeholder-padding-top;
+        @include transition(0.25s cubic-bezier(0.25, 0.8, 0.25, 1) 0s);
+        @include transform(translate3d(0px, ($form-placeholder-animation-top * 0.8), 0px) scale(1));
+        @include transform-origin(left top);
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        font-size: ($input-font-size * 1.1);
+    }
+
+    .input-panel:focus + label,
+    &.input-focus + label,
+    &.input-focus label {
+        color: $primary-color; 
+        @include transform(translate3d(0, (-(floor($form-placeholder-animation-top *1.8))), 0px) scale(0.85));
+        padding-right: 0; 
+    }
+    &.input-focus.error label{
+        color: $error-color;
+    }
+
+    &.form-panel-el{
+        label{
+            @include transform(translate3d(0px, $form-placeholder-animation-top-el, 0px) scale(1));
+        }
+        .input-panel:focus + label,
+        &.input-focus + label,
+        &.input-focus label {
+            @include transform(translate3d(0, (-(floor($form-placeholder-animation-top *1.8))), 0px) scale(0.85));
+        }
+    }
+    &.form-panel-la{
+        label{
+            @include transform(translate3d(0px, $form-placeholder-animation-top-la, 0px) scale(1));
+        }
+        .input-panel:focus + label,
+        &.input-focus + label,
+        &.input-focus label {
+            @include transform(translate3d(0, (-(floor($form-placeholder-animation-top *1.8))), 0px) scale(0.85));
+        }
+    }
+    &.form-panel-sm{
+        label{
+            @include transform(translate3d(0px, $form-placeholder-animation-top-sm, 0px) scale(1));
+        }
+        .input-panel:focus + label,
+        &.input-focus + label,
+        &.input-focus label {
+            @include transform(translate3d(0, (-(floor($form-placeholder-animation-top *1.8))), 0px) scale(0.85));
+        }
+    }
+    &.form-panel-es{
+        label{
+            @include transform(translate3d(0px, $form-placeholder-animation-top-es, 0px) scale(1));
+        }
+        .input-panel:focus + label,
+        &.input-focus + label,
+        &.input-focus label {
+            @include transform(translate3d(0, (-(floor($form-placeholder-animation-top *1.8))), 0px) scale(0.85));
+        }
+    }
+}
+
+.input-panel{
+    display: block;
+    width: 100%;
+    height: $input-height-primary;
+    padding: $padding-primary-vertical $padding-primary-horizontal;
+    font-size: $input-font-size;
+    line-height: $line-height-primary;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none; 
+    border: 1px solid $input-border;
+    @include border-radius($input-border-radius); 
+    @include transition(all .2s ease-in-out);
+    font-family: $font-family-sans-serif;
+
+    &:-webkit-autofill {
+        @include transition(none);
+        -webkit-box-shadow: 0 0 0 30px white inset;
+    }
+
+    &.box-shadow{
+        @include box-shadow($input-box-shadow);
+    }
+
+    // Placeholder
+    @include input-placeholder{
+        color: $input-placeholder-color;
+    }
+
+    &::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        opacity: 1;
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+    }
+
+    &:focus{
+        border-color: $primary-color;
+    }
+
+
+}
+[type="file"].input-panel{
+    padding: ($padding-primary-vertical*.7) ($padding-primary-horizontal*.4);
+}
+
+//Calender
+.calender-pan,
+.time-pan{
+    position: relative;
+    z-index: 200;
+    
+    .input-panel{
+        padding-right: ($padding-primary-horizontal*2);
+    }
+}
+.time-pan{
+    &:after{
+        content: "\f017";
+        font-family: "Font Awesome 5 Free";
+        font-size: ($font-size-primary * 2);
+        color: $black-lighter;
+        position: absolute;
+        right: 8px;
+        bottom: 4px;
+
+    }
+}
+.ui-datepicker-trigger{
+    background: none;
+    border: none;
+    font-size:($font-size-primary * 2.4); 
+    color:$black-lighter;
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}
+
+select{
+    &.input-panel{
+        padding-left:($padding-primary-horizontal * 0.9);
+        padding-right: ($padding-primary-horizontal*3);
+        @include appearance();
+        background-position: 100% 0.7rem;
+        background-repeat: no-repeat;
+        background-image:url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMzMzMzMzIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjggMjQiIHdpZHR
+        oPSIyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNy40MS
+        A3Ljg0TDEyIDEyLjQybDQuNTktNC41OEwxOCA5LjI1bC02IDYtNi02eiIvPjxwYXRoIGQ9Ik0wL
+        S43NWgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');
+
+        // option{
+        //     &:checked,
+        //     &:hover{
+        //         background-color: $primary-color;
+        //     }
+        // }
+
+    }
+    &[multiple]{
+        height: auto;
+        background-image: none;
+    }
+}
+@include appearance-select();
+
+textarea.input-panel{
+    height: auto;
+    resize: none;
+}
+
+//Label
+label{
+    font-size: $input-font-size;
+    max-width: 100%;
+    display: inline-block;
+    margin: $label-margin;
+    font-weight: $label-font-weight;
+
+    &.label-el{
+        font-size: $font-size-el;
+    }
+    &.label-la{
+        font-size: $font-size-la;
+    }
+    &.label-sm{
+        font-size: $font-size-sm;
+    }
+    &.label-es{
+        font-size: $font-size-es;
+    }
+
+    span{
+        color: $error-color;
+    }
+}
+
+//Input Group
+.input-group{
+   // @media #{$breakpoint-small} {
+        display: table;
+        vertical-align: middle;
+        > .input-panel {
+            width: 100%;
+        }
+
+        .input-group-icon,
+        .input-group-button {
+            width: 1%;
+        }
+        .input-group-button{
+            vertical-align: top;
+
+        }
+   // }
+    .button{
+        margin: 0;
+    }
+    .input-panel,
+    .input-group-icon,
+    .input-group-button {
+        display: table-cell;
+
+        &:first-child{
+            @include border-radius($input-border-radius 0 0 $input-border-radius);
+            border-right: 0;
+            .button{
+                @include border-radius($input-border-radius 0 0 $input-border-radius);
+            }
+        }
+        &:last-child{
+            @include border-radius(0 $input-border-radius $input-border-radius 0);
+            border-left: 0;
+            .button{
+                @include border-radius(0 $input-border-radius $input-border-radius 0);
+            }
+        }
+        &:not(:first-child):not(:last-child){
+            @include border-radius(0);
+        }
+
+    }
+}
+
+
+.input-group-icon {
+    padding: $padding-primary-vertical $padding-sm-horizontal;
+    font-size: $input-font-size; 
+    font-weight: 400;
+    line-height: 1;
+    color: $text-color;
+    text-align: center;
+    background-color: lighten($black, 96%);
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius; 
+}
+
+//Form Horizontal
+.form-horizontal{
+    .form-panel{
+        margin-left:  ceil(($grid-gutter-width / -2));
+        margin-right: floor(($grid-gutter-width / -2));
+        @include clearfix();
+
+        label{
+            padding-top: ($padding-primary-vertical * 1.35);
+            padding-bottom: ($padding-primary-vertical * 1.35);
+            margin: 0;
+            line-height: $line-height-primary;
+        }
+
+        &.form-panel-el{
+            label{
+                padding-top: ($padding-el-vertical * 0.85);
+                padding-bottom: ($padding-el-vertical * 0.85);
+                line-height: $line-height-el;
+            }
+        }
+        &.form-panel-la{
+            label{
+                padding-top: ($padding-la-vertical * 1.1);
+                padding-bottom: ($padding-la-vertical * 1.1);
+                line-height: $line-height-la;
+            }
+        }
+        &.form-panel-sm{
+            label{
+                padding-top: ($padding-sm-vertical * 1.2);
+                padding-bottom: ($padding-sm-vertical * 1.2);
+                line-height: $line-height-sm;
+            }
+        }
+    }    
+}
+
+//Search
+.search-out-button-style{
+    padding-right: $out-style-padding-right;
+    position: relative;
+    
+    .input-panel{
+        padding-right: $out-style-padding-right;
+    }
+    .button{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        @include translate(0, -50%);
+        min-width: 7rem;
+    }
+    &.form-panel-la{
+        .button{ 
+            padding: $padding-primary-vertical $padding-primary-horizontal;
+        }
+        .input-panel{
+            padding-right: $out-style-padding-right;
+        }
+    }    
+}
+
+.left-icon{
+    position: relative;
+    .input-panel{
+        padding-left: $left-icon-padding-left;
+    }
+    &.form-panel-la{
+        .input-panel{
+            padding-left: $left-icon-padding-left;
+        }
+    }
+
+    &:after{
+        @include pseudo();
+        content: 'search';
+        font-family: "Material Icons";
+        text-rendering: optimizeLegibility;
+        top: 50%;
+        left: 1rem;
+        @include translate(0, -50%);
+        color: $black-light;
+        font-size: ($font-size-primary*2.2);
+    }
+}
+
+.search-inner-button-style{
+    position: relative;
+    
+    .input-panel{
+        padding-right: $inner-button-padding-right;
+    }
+    .button{
+        position: absolute;
+        top: 50%;
+        right: 0.6rem;
+        @include translate(0, -50%);
+        min-width: 7rem;
+    }
+    &.form-panel-la{
+        .button{ 
+            padding: $padding-primary-vertical $padding-primary-horizontal;
+        }
+        .input-panel{
+            padding-right: $inner-button-padding-right;
+        }
+    }
+    
+}
+
+//Size
+.form-panel-el{
+    @include input-size('.input-panel', $input-height-el, $padding-el-vertical, $padding-primary-horizontal, $font-size-el, $line-height-el, $input-border-radius-el);
+    label{
+        font-size: $font-size-el;
+    }
+}
+.form-panel-la{
+    @include input-size('.input-panel', $input-height-la, $padding-la-vertical, $padding-primary-horizontal, $font-size-la, $line-height-la, $input-border-radius-la);
+
+    label{
+        font-size: $font-size-la;
+    }
+}
+.form-panel-sm{
+    @include input-size('.input-panel', $input-height-sm, $padding-sm-vertical, $padding-sm-horizontal, $font-size-sm, $line-height-sm, $input-border-radius-sm);
+
+    label{
+        font-size: $font-size-sm;
+    }
+}
+.form-panel-es{
+    @include input-size('.input-panel', $input-height-es, $padding-es-vertical, $padding-es-horizontal, $font-size-es, $line-height-es, $input-border-radius-es);
+
+    label{
+        font-size: $font-size-es;
+    }
+}
+
+//Checkbox
+.checkbox{
+    margin-bottom: $check-row-margin-bottom;
+    input[type="checkbox"],
+    input[type="radio"]{
+        position:absolute; 
+        visibility:hidden; 
+        top:1px;
+
+        &:checked + label:after {
+            @include opacity(1);
+        }
+        &:checked + label:before{
+            border-color: $primary-color;
+            background-color: $primary-color;
+        }
+        
+        &:disabled + label{
+            color: $disable-check-color; 
+            
+            &:before{
+                @include opacity(0.4);
+            }
+            &:hover{
+                &:before{
+                    @include opacity(0.4);
+                    border-color: $checkbox-border-color;
+                    background-color: transparent;
+                }
+                &:after{
+                    @include opacity(0);
+                }
+            }
+        }
+    } 
+    
+    &.no-text{
+        label{
+            padding-left: $check-no-text-left-padding;
+        }
+    }
+    
+    label {
+        cursor: pointer;
+        position: relative;
+        padding:0 0 0 $check-left-padding;
+        font-size:$input-font-size;
+        // color:$black;
+        color:$text-color;
+        font-weight: $checkbox-font-weight;
+        line-height: $line-height-primary;
+        margin: 0;
+        display: block;
+        min-height: $checkbox-width;
+        text-align: left;
+
+        &:before{
+            content: "";
+            border:1px solid $checkbox-border-color;
+            background-color: $checkbox-bg;
+            @include transition(all .2s ease-in-out);
+            width: $checkbox-width;
+            height: $checkbox-width;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            @include translate(0,-50%);
+            @include border-radius($checkbox-border-radius);
+        }
+        &.box-shadow{
+            @include box-shadow($box-shadow-primary);    
+        }
+        &:after{
+            content: "check";
+            font-family: "Material Icons";
+            color: $checkbox-tick-color;
+            font-size:($input-font-size*1.2);
+            position: absolute;
+            left: 1px;
+            top: 50%;
+            @include translate(0,-50%);
+            @include transition(all .2s ease-in-out);
+            opacity: 0;
+        }
+        
+        &:hover{
+            &:before{
+                background-color: rgba($primary-color, 0.15);
+                border-color: rgba($primary-color, 0.15);
+            }
+            &:after{
+                @include opacity(0.5);    
+            }
+        }
+    }
+}
+
+//Radio
+.radio{
+    @extend .checkbox;
+    input[type="radio"]{
+        
+        &:checked + label:after {
+            
+        }
+        &:checked + label:before{
+            background-color: transparent;            
+        }
+        
+    } 
+    
+    label {
+        
+        &:before{
+            border-radius: 50%;
+
+        }
+        &:after{
+            border-radius: 50%;
+            content: "";
+            width: ($checkbox-width * 0.56);
+            height: ($checkbox-width * 0.55);
+            background-color: $primary-color;
+            left: $radio-inner-left; 
+        }
+
+        &:hover{
+            &:before{
+                background-color: transparent;
+            }
+        }
+    }
+    
+}
+
+//File
+.upload-file-btn{ 
+    font-size: ($input-font-size*1.2); 
+    .material-icons{
+        font-size: 2.4rem;
+        color: $primary-color;
+        position: relative;
+        top: 0.5rem;
+        line-height: 0.5;
+        margin-right: 0.5rem;
+    }
+}
+.upload-file-container{
+    position:absolute; 
+    left:-999999px; 
+    top:-999999px;
+}
+.file-name-list li{
+    margin: 0.5rem 0 0 0;
+    font-size: ($input-font-size*0.9); 
+}
+
+
+//Switch
+.switch{
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0;
+}
+// Switch 1 
+input[type="checkbox"].switch-1{
+    @include appearance();
+	width: 70px;
+	height: 30px;
+    background: $black-lighter;
+    @include border-radius(30px);
+	position: relative;
+	cursor: pointer;
+    outline: none;
+    @include transition(all .2s ease-in-out );
+    
+    &:checked{
+        background: $primary-color;
+        &:after{
+            left: calc(100% - 30px);
+        }
+    }
+    &:after{
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        @include border-radius(50%);
+        background: $switch-bg;
+        @include box-shadow($switch-box-shadow);
+        @include scale(0.7);
+        left: 0;
+        @include transition(all .2s ease-in-out );
+      }
+  }
+  	
+
+
+// Switch 2 
+input[type="checkbox"].switch-2{
+    @include appearance();
+    width: 70px;
+    height: 5px;
+    background-color: $border-color;
+    @include border-radius($border-radius);
+    @include transition(all .25s ease-in-out );
+    position: relative;
+    outline: 0;
+    cursor: pointer;
+    &:before,
+    &:after{
+        position: absolute;
+        content: "";
+        @include transition(all .25s ease-in-out );
+    }
+    &:after{
+    width: 30px;
+    height: 30px;
+    background: $switch-bg;
+    @include border-radius(50%);
+    @include box-shadow($switch-box-shadow);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include transform-origin(50% 50%);
+    }
+    &:checked{
+    background: $primary-color;
+    &:after{
+        left: calc(100% - 30px);
+        background: $primary-color;
+        }
+    }
+} 
+
+
+//Form inline
+.input-inline{
+    
+    @media #{$breakpoint-small} {
+        .form-panel {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            margin-right: 0.4rem;
+            vertical-align: top;
+        }
+
+        .input-panel {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .control-label {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .input-group{
+            display: inline-table;
+        }
+        .input-group-icon,
+        .input-group-button,
+        .input-panel  {
+            width: auto;
+        }
+
+        // Remove default margin on radios/checkboxes that were used for stacking, and
+        // then undo the floating of radios and checkboxes to match.
+        .radio,
+        .checkbox,
+        .switch {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: $checkbox-inline-margin-right;
+            vertical-align: middle;
+        }
+
+    }
+
+}
+
+.input-date-range{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0 -8px;
+
+    .form-panel{
+        flex-basis: calc(50% - 16px);
+        width: calc(50% - 15px);
+        margin-left: 8px;
+        margin-right: 7px;
+    }
+
+}
+
+//Choosen
+.chosen-container-multi{
+    .chosen-choices{
+        background-color: $input-bg;
+        background-image: none;
+        border-color: $border-color;
+        color: $input-color;
+        @include border-radius($input-border-radius); 
+
+        li{
+            &.search-choice{
+                border: none;
+                margin: 4px 5px 4px 0;
+                padding: 6px 22px 6px 8px;
+                background: $primary-color;
+                color: $white-color;
+                @include border-radius($input-border-radius); 
+
+                .search-choice-close{
+                    background: none;
+                    font-size: ($font-size-primary*1.6);
+                    width: 14px;
+                    height: 14px;
+                    color: $white-color;
+                    top: 7px;
+                    right: 5px;
+                    &:after{
+                        @include pseudo();
+                        content: 'close';
+                        font-family: "Material Icons";
+                        text-rendering: optimizeLegibility;
+                        
+                    }
+                }
+            }
+            &.search-field{
+                input[type=text]{
+                    color: $input-color !important;
+                    height: 32px;
+                }
+            }
+        }
+    
+    }
+}
+
+//Time picker
+.ui-timepicker-div{
+    dl{
+        dd{
+            margin-bottom: 2rem;
+        }
+        .dt{
+            &.ui_tpicker_minute_label,
+            &.ui_tpicker_second_label{
+                margin-top: -8px;
+            }
+        }
+    }
+}
+
+//Error
+.error-message{
+    display:none;
+	color: $error-color;
+	font-style:italic;
+    font-size: ($input-font-size * 0.8);
+    position: absolute;
+    top: 100%;
+    text-align: right;
+    width: 100%;
+}
+

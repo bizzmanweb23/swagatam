@@ -1,0 +1,95 @@
+//Float 
+//***********************
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+@media #{$breakpoint-large} {
+  .float-left-la{
+    float: left !important;
+  }
+  .float-right-la{
+    float: right !important;
+  }
+  .float-none-la{
+    float:none !important;
+  }
+  .float-left-me{
+    float: left !important;
+  }
+  .float-right-me{
+    float: right !important;
+  }
+  .float-left-sm{
+    float: left !important;
+  }
+  .float-right-sm{
+    float: right !important;
+  }
+}
+@media #{$breakpoint-medium} {
+  .float-left-me{
+    float: left !important;
+  }
+  .float-right-me{
+    float: right !important;
+  }
+  .float-none-me{
+    float:none !important;
+  }
+  .float-left-sm{
+    float: left !important;
+  }
+  .float-right-sm{
+    float: right !important;
+  }
+}
+@media #{$breakpoint-small} {
+  .float-left-sm{
+    float: left !important;
+  }
+  .float-right-sm{
+    float: right !important;
+  }
+  .float-none-sm{
+    float:none !important;
+  }
+}
+@media #{$breakpoint-small-max} {
+  .float-left-es{
+    float: left !important;
+  }
+  .float-right-es{
+    float: right !important;
+  }
+  .float-none-es{
+    float:none !important;
+  }
+}
+
+@media #{$breakpoint-large} {
+  .float-left-la-only{
+    float: left !important;
+  }
+  .float-right-la-only{
+    float: right !important;
+  }
+}
+@media #{$breakpoint-large-only} {
+  .float-left-me-only{
+    float: left !important;
+  }
+  .float-right-me-only{
+    float: right !important;
+  }
+}
+@media #{$breakpoint-medium-only} {
+  .float-left-sm-only{
+    float: left !important;
+  }
+  .float-right-sm-only{
+    float: right !important;
+  }
+}

@@ -1,0 +1,155 @@
+//
+// Loogin page
+// ****************************
+.login-wrapper{
+    // padding: $padding-la $padding-la ($padding-la * 3);
+    padding: $padding-la $padding-la ($padding-la * 3);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+.login-brand{
+    @include push-auto();
+    margin-bottom: $margin-la;
+    text-align: center;
+    strong{
+        @include text-hide();
+    }
+    img{
+        width: 23.0rem;
+    }
+}
+.login-container{
+    margin: 0 10rem;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    @include box-shadow($card-shadow);
+    background-color: $white-color;
+    @media #{$breakpoint-small-max} {
+        margin: 0;
+    }
+}
+.login-bg{
+    background-color: $primary-color;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    color: $white-color;
+    padding: 7rem 2rem 0 0;
+    // clip-path: polygon(100% 0, 0 0%, 100% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 0%, 100% 100%);
+    clip-path: polygon(100% 0, 0 0%, 100% 100%);
+    @media #{$breakpoint-small-max} {
+        clip-path:inherit;
+        width: 100%;
+        height: inherit;
+        position: inherit;
+        padding: 3rem;
+    }
+
+    > div{
+        @include bg-image();
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        @include opacity(0.5);
+    }
+
+    h1{
+        color: $white-color; 
+        position: relative;
+        z-index: 100;
+        margin: 0 0 1rem;
+        @media #{$breakpoint-small-max} {
+            text-align: center;
+        }
+    }
+    p{
+        width: 55%;
+        position: relative;
+        z-index: 100;
+        display: inline-block;
+        @media #{$breakpoint-small-max} {
+            text-align: center;
+            width: 100%;
+        }
+    }
+    @media #{$breakpoint-small-max} {
+        width: 100%;
+        height: inherit;
+    }
+}
+.login-box{
+    padding: 10rem 0 10rem 5rem;
+    width: 48%;
+    position: relative;
+    z-index: 100;
+    @media #{$breakpoint-medium-max} {
+        
+        width: 50%;
+    }    
+    // &::after{
+    //     content: "";
+    //     width: 230%;
+    //     height: 150%;
+    //     position: absolute;
+    //     right: -123%;
+    //     top: 32%;
+    //     background-color: #ffffff;
+    //     transform: rotate(31deg);
+    //     z-index: -1;
+    // }
+    .checkbox{
+        margin-top: 0.6rem;
+    }
+    @media #{$breakpoint-small-max} {
+        width: 100%;
+        padding: 3rem;
+    }
+}
+@supports (-ms-ime-align:auto) {
+    .login-box{
+        padding: 10rem 0 10rem 5rem;
+        width: 48%;
+        position: relative;
+        z-index: 100;
+    
+        &::after{
+            content: "";
+            width: 230%;
+            height: 150%;
+            position: absolute;
+            right: -115%;
+            top: 32%;
+            background-color: #ffffff;
+            transform: rotate(37.5deg);
+            z-index: -1;
+        }        
+    }
+    .login-box{
+        width: 54.4%;
+    }
+}
+.forgot-pwd-link{
+    margin-top: $margin-primary;
+    display: inline-block;
+}
+.login-copyright-text{
+    font-size: $font-size-sm;
+    display: block;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 2rem;
+    width: 100%;
+}

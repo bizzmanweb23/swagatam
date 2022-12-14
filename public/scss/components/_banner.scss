@@ -1,0 +1,81 @@
+//
+// Banner
+// --------------------------------------------------
+.bg-image-banner-slider{
+    margin: 0 0 $slider-bottom-margin;
+    .slide-item{
+        height: $slider-banner-height;
+
+        // @media #{$breakpoint-large-max} {
+        //     height: auto;
+        // }
+        @media #{$breakpoint-small-max} {
+            height: auto;
+            min-height: ($slider-banner-height / 2);
+        }
+    }
+}
+.slide-item{
+    @include bg-image();
+}
+.banner-content{
+    padding: $banner-content-top-gap $banner-padding-horizontal;
+    @media #{$breakpoint-large-max} {
+        padding: ($banner-content-top-gap * 0.8) $banner-padding-horizontal;
+    }
+
+    @media #{$breakpoint-small-max} {
+        padding: ($banner-content-top-gap * 0.5) ($banner-padding-horizontal * 0.7) ($banner-content-top-gap * 0.7);
+    }
+}
+.banner-heading{
+    font-size: $banner-heading-font-size;
+    font-weight: $banner-heading-font-weight;
+    margin: $banner-heading-margin;
+    color: $banner-heading-color;
+    text-shadow: $text-shadow;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($banner-heading-font-size * 0.8);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($banner-heading-font-size * 0.65);
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($banner-heading-font-size * 0.45);
+    }
+}
+.banner-text{
+    font-size: $banner-text-size;
+    color: $banner-text-color;
+    font-weight: $banner-text-font-weight;
+    text-shadow: $text-shadow;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($banner-text-size * 0.8);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($banner-text-size * 0.7);
+    }
+}
+.banner-white-text{
+    color: $banner-text-color-light
+}
+
+//Banner with text
+.banner-panel{
+    padding: $banner-padding-vertical 0;
+    position: relative;
+    margin: 0 0 $slider-bottom-margin;
+    @include bg-image();
+
+    @media #{$breakpoint-large-max} {
+        padding: ($banner-padding-vertical * 0.6) 0
+    }
+    @media #{$breakpoint-medium-max} {
+        padding: ($banner-padding-vertical * 0.4) 0
+    }
+}
+.banner-bg-1{ 
+    @include gradient($from: $navigation-bg, $to: lighten($navigation-bg, 20%)); 
+}

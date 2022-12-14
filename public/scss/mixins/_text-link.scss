@@ -1,0 +1,16 @@
+// Text link
+
+@mixin text-link($color) {
+  color: $color;
+  @include transition(all .2s ease-in-out);
+  background: none;
+  border: none;
+  
+  &:hover{
+   color: darken($color, 10%);
+   background: none;
+   border: none;
+   text-decoration: none;
+  }
+}
+

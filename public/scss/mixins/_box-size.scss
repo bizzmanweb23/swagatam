@@ -1,0 +1,17 @@
+// Sizing shortcuts
+
+@mixin box-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin box-square($size) {
+  width: $size;
+  height: $size;
+}
+@mixin box-square-center($size) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  text-align: center;
+}

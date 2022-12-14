@@ -1,0 +1,150 @@
+//
+// Step
+//** --------------------------------------------------
+.step-list{
+    display: table;
+    list-style: none;
+    margin: 0 0 $step-margin;
+    padding: 0;
+    width: 100%; 
+    text-align: center;
+    position: relative;
+    z-index: $zindex-step-tooltip;
+
+    >li{
+        display: table-cell;
+        position: relative;
+        
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: -50%;
+            top: ($step-number-width / 2);
+            height: $step-border-height;
+            margin-bottom: -($step-border-height / 2);
+            background-color: $step-bg-normal;
+            @include transition(all 0.4s linear); 
+
+            @media #{$breakpoint-small-max} {
+                top: ($step-number-width /2 * 0.8);
+                height: ($step-border-height * 0.8);
+            }
+            
+        }
+        &:after{
+            @extend :before;
+            background-color: $step-bg-active;
+            width: 0;
+            @include transition(all 0.2s linear);
+        }
+
+        &.active{
+            &:after{
+                width:100%;
+            }
+            .step-number{
+                background-color: $step-bg-active;
+                cursor: pointer;
+                &:hover{
+                    + .step-tooltip{
+                        @include transform (scale(1));
+                    }
+                }
+            }
+        }
+
+        &:first-child{
+            .step-number{
+                background-color: $step-bg-active;
+            }
+            &:before,
+            &:after{
+                display: none;
+            }
+        }
+    }
+} 
+.step-number{
+    @include box-square-center($step-number-width);
+    @include border-radius(50%);
+    @include push-auto();
+    background-color: $step-bg-normal;
+    color: $white-color;
+    position: relative;
+    z-index: ($zindex-step-tooltip +1);
+
+    @media #{$breakpoint-small-max} {
+        @include box-square-center($step-number-width * 0.8);
+    }
+
+    // &:before{
+    //     content: attr(data-number);
+    //     position: absolute;
+    //     width: 100%;
+    //     height: 100%;
+    //     left: 0;
+    //     top: 0;
+    // }  
+
+    
+}
+
+//Step tooltip
+.step-tooltip{
+    border: 1px solid $border-color;
+    @include border-radius($step-tooltip-radius);
+    @include box-shadow($step-tooltip-box-shadow);
+    padding: $step-padding;
+    background-color: $step-tooltip-bg;
+    width: $step-tooltip-width;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -($step-tooltip-width / 2);
+    margin-top: ($step-toooltip-arrow-size *1.5);
+    font-size: $font-size-sm;
+    @include transition(all .1s ease);
+    @include transform (scale(0));
+
+    p{
+        margin: ($step-padding / 2) 0 0;
+    }
+
+    &:after{
+        content: "";
+        @include triangle($step-tooltip-bg, up, $step-toooltip-arrow-size);
+        left: 50%;
+        @include translate(-50%, 0);
+        margin-bottom: 0;
+    }
+
+    ul{
+        margin: ($step-padding / 2) 0 0;
+        li{
+            margin: 0 0 ($step-padding / 4)
+        }
+    }
+
+    @media #{$breakpoint-medium-max} {
+        width: calc(100% + 5.6rem);
+        margin-left: calc(-50% - 2.8rem);
+        padding: ($step-padding * 0.7);
+        font-size: ($font-size-sm * 0.9);
+
+        h5{
+            font-size: ($font-size-h5 * 0.75);
+            margin-bottom: $font-size-h5/3;
+        }
+
+        ul{
+            margin: ($step-padding / 3) 0 0;
+            li{
+                margin: 0 0 ($step-padding / 5)
+            }
+        }
+        p{
+            margin: ($step-padding / 3) 0 0;
+        }
+    }
+}

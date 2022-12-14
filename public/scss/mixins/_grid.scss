@@ -1,0 +1,96 @@
+// Grid system
+//************************
+// Wrapper part
+@mixin wrapper-fixed($gutter: $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  floor(($gutter / 2));
+  padding-right: ceil(($gutter / 2));
+  @include clearfix;
+}
+@mixin flexible-top($elementHeight) {
+  top: $elementHeight;
+}
+ 
+@for $i from 1 through $grid-columns {   
+  .col-la-#{$i},
+  .col-me-#{$i},
+  .col-sm-#{$i},
+  .col-es-#{$i}  {         
+    position: relative;
+    min-height: 1px;
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+  }   
+}
+
+@for $i from 1 through $grid-columns {      
+  .col-es-#{$i} {  
+    float: left;       
+    width: 100% / $grid-columns * $i;   
+  }  
+  .offset-es-#{$i}{
+    margin-left: 100% / $grid-columns * $i;   
+  }
+  .push-es-#{$i}{
+    left: 100% / $grid-columns * $i;   
+  }
+  .pull-es-#{$i}{
+    right: 100% / $grid-columns * $i;   
+  }
+} 
+
+@media #{$breakpoint-small} {
+  @for $i from 1 through $grid-columns {      
+    .col-sm-#{$i} {    
+      float: left;     
+      width: 100% / $grid-columns * $i;   
+    }  
+    .offset-sm-#{$i}{
+      margin-left: 100% / $grid-columns * $i;   
+    }
+    .push-sm-#{$i}{
+      left: 100% / $grid-columns * $i;   
+    }
+    .pull-sm-#{$i}{
+      right: 100% / $grid-columns * $i;   
+    }
+  } 
+}
+
+@media #{$breakpoint-medium} {
+  @for $i from 1 through $grid-columns {      
+    .col-me-#{$i} {   
+      float: left;      
+      width: 100% / $grid-columns * $i;   
+    }  
+    .offset-me-#{$i}{
+      margin-left: 100% / $grid-columns * $i;   
+    }
+    .push-me-#{$i}{
+      left: 100% / $grid-columns * $i;   
+    }
+    .pull-me-#{$i}{
+      right: 100% / $grid-columns * $i;   
+    }
+  } 
+
+}
+
+@media #{$breakpoint-large} {
+  @for $i from 1 through $grid-columns {      
+    .col-la-#{$i} {    
+      float: left;     
+      width: 100% / $grid-columns * $i;   
+    }  
+    .offset-la-#{$i}{
+      margin-left: 100% / $grid-columns * $i;   
+    }
+    .push-la-#{$i}{
+      left: 100% / $grid-columns * $i;   
+    }
+    .pull-la-#{$i}{
+      right: 100% / $grid-columns * $i;   
+    }
+  }   
+}

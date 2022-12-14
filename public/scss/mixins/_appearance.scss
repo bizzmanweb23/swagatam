@@ -1,0 +1,21 @@
+// Appearance
+@mixin appearance($val: none) {
+	-webkit-appearance: $val;
+	-moz-appearance: $val;
+	appearance: $val;
+}
+
+@mixin appearance-select($val: none){
+    select::-ms-expand {
+        display: none;
+    }
+}
+
+/*
+input,  
+textarea {  
+    @include input-placeholder {
+        color: $grey;
+    }
+}
+*/

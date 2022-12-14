@@ -1,0 +1,202 @@
+// Tooltip
+// *******************************
+.tooltip{
+    position: relative;
+    white-space: normal;
+    
+    &:hover{
+      text-decoration: none;
+    }
+
+    .tooltip-content {
+      position: absolute;
+      min-width: $tooltip-width;
+      font-size: $tooltip-font-size;
+      padding: $tooltip-padding;
+      background-color: $tooltip-bg;
+      color: $tooltip-text-color;
+      text-align: $tooltip-text-align;
+      @include border-radius($tooltip-radius);
+      @include transition(all .1s ease);
+      @include box-shadow($tooltip-box-shadow);
+      z-index: $zindex-tooltip;
+
+    }
+
+    //Top center
+    &.top-center{
+      .tooltip-content{
+        bottom: 100%;
+        left: 50%;
+        margin-bottom: $tooltip-margin;
+        @include transform (translateX(-50%) scale(0));
+        &:after{
+          @include triangle($tooltip-bg, down, $tooltip-arrow-size);
+          top: 100%;
+          left: 50%;
+          @include transform (translate(-50%, 0));
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (translateX(-50%) scale(1));
+        }
+      }
+    }
+
+    //Top left
+    &.top-left{
+      .tooltip-content{
+        bottom: 100%;
+        right: auto;
+        left: 0;
+        margin-bottom: $tooltip-margin;
+        @include transform (scale(0));
+
+        &:after{
+          @include triangle($tooltip-bg, down, $tooltip-arrow-size);
+          left: $tooltip-arrow-left-right-gap;
+          top: 100%;
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (scale(1));
+        }
+      }
+    }
+
+    //Top right
+    &.top-right{
+      .tooltip-content{
+        bottom: 100%;
+        right: 0;
+        left: auto;
+        margin-bottom: $tooltip-margin;
+        @include transform (scale(0));
+
+        &:after{
+          @include triangle($tooltip-bg, down, $tooltip-arrow-size);
+          right: $tooltip-arrow-left-right-gap;
+          top: 100%;
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (scale(1));
+        }
+      }
+    }
+
+    //Bottom center
+    &.bottom-center{
+      .tooltip-content{
+        top: 100%;
+        left: 50%;
+        margin-top: $tooltip-margin;
+        @include transform (translateX(-50%) scale(0));
+        &:after{
+          @include triangle($tooltip-bg, up, $tooltip-arrow-size);
+          bottom: 100%;
+          left: 50%;
+          @include transform (translate(-50%, 0));
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (translateX(-50%) scale(1));
+        }
+      }
+    }
+
+    //Bottom left
+    &.bottom-left{
+      .tooltip-content{
+        top: 100%;
+        right: auto;
+        left: 0;
+        margin-top: $tooltip-margin;
+        @include transform (scale(0));
+
+        &:after{
+          @include triangle($tooltip-bg, up, $tooltip-arrow-size);
+          left: $tooltip-arrow-left-right-gap;
+          bottom: 100%;
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (scale(1));
+        }
+      }
+    }
+
+    //Bottom right
+    &.bottom-right{
+      .tooltip-content{
+        top: 100%;
+        right: 0;
+        left: auto;
+        margin-top: $tooltip-margin;
+        @include transform (scale(0));
+
+        &:after{
+          @include triangle($tooltip-bg, up, $tooltip-arrow-size);
+          right: $tooltip-arrow-left-right-gap;
+          bottom: 100%;
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (scale(1));
+        }
+      }
+    }
+
+    //Left center
+    &.left-center{
+      .tooltip-content{
+        top: 50%;
+        right: 100%;
+        margin-right: $tooltip-margin;
+        @include transform (translateY(-50%) scale(0));
+        &:after{
+          @include triangle($tooltip-bg, right, $tooltip-arrow-size);
+          top: 50%;
+          left: 100%;
+          @include transform (translate(0, -50%));
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (translateY(-50%) scale(1));
+        }
+      }
+    }
+    //Right center
+    &.right-center{
+      .tooltip-content{
+        top: 50%;
+        left: 100%;
+        margin-left: $tooltip-margin;
+        @include transform (translateY(-50%) scale(0));
+        &:after{
+          @include triangle($tooltip-bg, left, $tooltip-arrow-size);
+          top: 50%;
+          right: 100%;
+          @include transform (translate(0, -50%));
+        }
+      }
+      &.in{
+        .tooltip-content{
+          @include transform (translateY(-50%) scale(1));
+        }
+      }
+    }
+
+
+
+  }
+  
+
+

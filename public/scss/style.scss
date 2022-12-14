@@ -1,0 +1,162 @@
+
+// Variables
+@import "global/variables.scss";
+
+// Reset
+@import "global/normalize.scss";
+
+//Fonts
+@import "global/material-design-icons.scss";
+ 
+/****** Mixins ******/
+  // Layout
+@import "mixins/clearfix.scss";
+@import "mixins/box-sizing.scss";
+@import "mixins/grid.scss";
+@import "mixins/flex.scss";
+@import "mixins/push-auto.scss";
+@import "mixins/pseudo.scss";
+@import "mixins/visibility.scss";
+@import "mixins/text-hide.scss";
+@import "mixins/font-icon.scss";
+
+  // Makeup
+@import "mixins/border-radius.scss";
+@import "mixins/box-text-shadow.scss";
+@import "mixins/gradient.scss";
+@import "mixins/retina-images.scss";
+@import "mixins/transition.scss";
+@import "mixins/transformations.scss";
+@import "mixins/backface_visibility.scss";
+@import "mixins/keyframe.scss";
+@import "mixins/animation.scss";
+@import "mixins/background-image.scss";
+@import "mixins/user-select.scss";
+
+
+// Utilities
+@import "mixins/placeholders.scss";
+@import "mixins/opacity.scss";
+@import "mixins/overlay.scss";
+@import "mixins/triangle.scss";
+@import "mixins/appearance.scss";
+@import "mixins/box-size.scss";
+@import "mixins/table.scss";
+@import "mixins/text-link.scss";
+@import "mixins/text-ellipsis.scss";
+@import "mixins/button.scss";
+@import "mixins/form.scss";
+@import "mixins/pagination.scss"; 
+
+
+// Core
+@import "global/global-core.scss";
+@import "global/container.scss";
+@import "global/waves.scss";
+@import "global/fonts.scss";
+@import "global/helper-class.scss";
+@import "global/position.scss";
+@import "global/float.scss";
+@import "global/border.scss";
+@import "global/display.scss";
+@import "global/margin-padding.scss";
+@import "global/scroll.scss";
+
+//404
+@import "global/404.scss";
+
+//visibility
+@import "global/visibility.scss";
+
+//Example
+@import "global/example.scss";
+
+//Jquery ui
+@import "components/jquery-ui.scss";
+
+//Components
+@import "components/icon.scss";
+@import "components/list.scss";
+@import "components/links.scss";
+@import "components/button.scss";
+@import "components/button-effect.scss";
+@import "components/form.scss";
+@import "components/loader.scss";
+@import "components/labels.scss";
+@import "components/tooltip.scss";
+@import "components/navigation.scss";
+@import "components/side-bar-menu.scss";
+@import "components/slide-navigation.scss";
+@import "components/image-style.scss";
+@import "components/banner.scss";
+@import "components/footer.scss";
+@import "components/heading.scss";
+@import "components/accordian.scss";
+@import "components/tab.scss";
+@import "components/fixed-scroll-panel.scss";
+@import "components/breadcrumb.scss";
+@import "components/table.scss";
+@import "components/datatable.scss";
+@import "components/table-col-fixed.scss";
+@import "components/timeline.scss";
+@import "components/pagination.scss";
+@import "components/bagde.scss";
+@import "components/progress-bars.scss";
+@import "components/media.scss";
+@import "components/iframe.scss";
+@import "components/alert.scss";
+@import "components/card.scss";
+@import "components/testimonial.scss";
+@import "components/gallery.scss";
+@import "components/gallery-sort.scss";
+@import "components/carousel.scss";
+@import "components/countdown.scss";
+@import "components/go-to-top.scss";
+@import "components/quick-edit.scss";
+@import "components/step.scss";
+@import "components/filter.scss";
+
+
+//Slick slider
+@import "slick/slick.scss";
+@import "slick/slick-theme.scss";
+
+
+//Magnific popup
+@import "magnific-popup/main.scss";
+
+
+// Multi Select
+
+@import "admin/multiselect";
+
+//Admin
+@import "admin/login.scss";
+@import "admin/dashboard.scss";
+@import "admin/admin-navigation.scss";
+@import "admin/chosen.scss";
+
+//Custom
+@import "custom";
+
+//timepicker
+@import "admin/timepicker.scss";
+
+//cross-sell
+@import "admin/cross-sell.scss";
+
+//inventory 
+@import "admin/inventory.scss";
+@import "admin/barcode.scss";
+
+
+@import "admin/component";
+
+@import "admin/collection";
+
+//Width
+@import "admin/width";
+
+//webportal custom
+
+@import "admin/webportal_custom"

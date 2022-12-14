@@ -1,0 +1,398 @@
+// Tables
+// ***************
+
+
+table {
+  background-color: $table-bg;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $margin-primary; 
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-padding;
+        line-height: $line-height-primary;
+        vertical-align: middle;
+        border-top: 1px solid $table-border-color;
+      }
+    }
+  }
+
+  > thead {
+    > tr {
+      > th {
+        vertical-align: bottom;
+        border-bottom: 1px solid $table-border-color;
+      }
+    }
+    &:first-child {
+      > tr:first-child {
+        > th,
+        > td {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  > tbody + tbody {
+    border-top: 2px solid $table-border-color;
+  }
+
+  // Table cell sizing
+  col[class*="col-"] {
+    position: static;
+    float: none;
+    display: table-column;
+  }
+  td,
+  th {
+    &[class*="col-"] {
+      position: static;
+      display: table-cell;
+    }
+  }
+
+
+}
+caption {
+  padding-top: $table-padding;
+  padding-bottom: $table-padding;
+  color: $black-light;
+  text-align: left;
+}
+
+
+// Padding small
+.table-padding-sm {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-padding-sm;
+      }
+    }
+  }
+}
+
+
+// Table border
+.table-border {
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 1px;
+    }
+  }
+}
+
+//Table outer border
+.table-outer-border{
+  border: 1px solid $table-border-color;
+}
+
+// Odd even Color style
+.table-odd-even {
+  >thead > tr > th > a{
+    text-decoration: none;
+  }
+  > tbody > tr:nth-of-type(odd) {
+    background-color: $table-bg-odd-even;
+  }
+}
+
+
+// Hover effect
+.table-hover {
+  > tbody > tr{
+    @include transition(all 0.2s linear);
+    &:hover {
+      background-color: $table-hover-bg;
+      @include box-shadow($table-hover-shadow);
+    }
+  }
+}
+
+// Head color
+.table-head-color {
+  >thead{
+    tr{
+      background-color: $table-head-bg;
+      > th {
+        border-bottom: none;
+      }
+    }
+  }
+
+
+  // &.table-border{
+  //   >thead{
+  //     tr{
+  //       >th{
+  //         position: relative;
+  //         padding: ($table-padding + 3) $table-padding;
+  //         border: none;
+  //         &:before {
+  //           content: "";
+  //           width: 1px;
+  //           height: 20px;
+  //           background: $table-head-border;
+  //           position: absolute;
+  //           right: 0;
+  //           top: 50%;
+  //           @include translate(0, -50%);
+  //         }
+  
+  //         &:last-child{
+  //           &:before{
+  //             display: none;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+.table-primary{
+  >thead{
+    tr{
+      background-color: $primary-color;
+      > th {
+        border-bottom: none;
+        color: $white-color;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+.table-dark{
+  @extend .table-primary;
+  >thead{
+    tr{
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.v-align-middle{
+  vertical-align: middle !important;
+}
+.table-with-min-width{
+  tr{
+    th,
+    td{
+      min-width: 100px;
+    }
+  }
+}
+
+.details-control {
+  padding: 0 18px 0 0;
+  position: relative;
+  color: $primary-color;
+  display: block;
+  span {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid $primary-color;
+    border-radius: 50%;
+
+    &:before {
+      width: 2px;
+      height: 7px;
+    }
+    &:after {
+      height: 2px;
+      width: 7px;
+    }
+
+    &:before, &:after {
+      content: "";
+      background-color: $primary-color;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.table-details-active{
+  background-color: darken($table-bg-odd-even, 4%) !important;
+  .details-control {
+    span {
+      &:before{
+        display: none;
+      }
+    }
+  }
+  // &.sub-one.table-details-row{
+  //   background-color: darken($table-bg-odd-even, 7%) !important;
+  //   td{
+  //     &.zone{
+  //       padding-left: 16px;
+  //     }
+  //   }
+  // }
+}
+
+.table-details-row{
+  &.table-details-sub-active{
+    background-color: darken($table-bg-odd-even, 7%) !important;
+    .details-control {
+      span {
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+  &.table-details-sub-two-active.sub-one{
+    background-color: darken($table-bg-odd-even, 10%) !important;
+    .details-control {
+      span {
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+  // &.sub-one.table-details-row{
+  //   background-color: darken($table-bg-odd-even, 7%) !important;
+  //   td{
+  //     &.zone{
+  //       padding-left: 16px;
+  //     }
+  //   }
+  // }
+
+
+
+
+  background-color: darken($table-bg-odd-even, 4%) !important;
+  td{
+    &.zone{
+      padding-left: 14px;
+    }
+  }
+  &.sub-one{
+    background-color: darken($table-bg-odd-even, 7%) !important;
+    td{
+      &.zone{
+        padding-left: 21px;
+      }
+    }
+  }
+  &.sub-two{
+    background-color: darken($table-bg-odd-even, 10%) !important;
+    td{
+      &.zone{
+        padding-left: 28px;
+      }
+    }
+  }
+}
+
+
+
+
+// Table backgrounds
+@include table-striped-hover('active', $table-active-bg);
+@include table-striped-hover('success', $success-color);
+@include table-striped-hover('info', $info-color);
+@include table-striped-hover('warning', $warning-color);
+@include table-striped-hover('error', $error-color);
+
+@include table-light-bg('primary', $primary-color);
+
+
+// Responsive tables
+.table-responsive-all{
+  overflow: auto;
+}
+.table-responsive {
+  // overflow-x: auto;
+  min-height: 0.01%;
+
+  @media #{$breakpoint-large-max} {
+    overflow-x: auto;
+  }
+  @media #{$breakpoint-small-max} {
+    width: 100%;
+    margin-bottom: $margin-sm;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table-border-color;
+
+    // Tighten up spacing
+    > table {
+      margin-bottom: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-border {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}

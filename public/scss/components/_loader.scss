@@ -1,0 +1,46 @@
+//
+// Loader
+// ***************************
+@keyframes loader{
+    from{
+        @include rotate(0);
+    }to{
+        @include rotate(360deg);
+    }
+}
+// @-webkit-keyframes loader{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loader{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.loader{
+    display: inline-block;
+    text-align: center;
+    font-size: ($font-size-primary * 1.4);
+    position: relative;
+    min-height: $loader-size;
+    min-width: $loader-size;
+
+    &:before,
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -($loader-size/2);
+        width: $loader-size;
+        height: $loader-size;
+        @include border-radius(50%);
+        border: $loader-border;
+    }
+    &:after{
+        border-color: $primary-color transparent transparent;
+        -webkit-animation:loader .6s linear;
+        animation:loader .6s linear;
+        -webkit-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+    }
+    &.loading-text{
+        padding-top: ($loader-size + 0.5);   
+    }
+}
+
+
+

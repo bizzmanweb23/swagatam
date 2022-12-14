@@ -1,0 +1,30 @@
+// Bagdes
+// *****************************
+.bagde{
+  padding: $padding-sm-vertical $padding-sm-horizontal;
+  @include border-radius(15px);
+  text-align: center;
+  color: $text-color;
+  display: inline-block;
+  background-color: lighten($primary-color, 30%);
+  font-size: $badge-font-size;
+  font-weight:$badge-font-weight ;
+  margin-bottom: 0.4rem;
+
+  &.bagde-success{
+    background-color: lighten($success-color, 30%);  
+  }
+  &.bagde-info{
+    background-color: lighten($info-color, 30%);  
+  }
+  &.bagde-warning{
+    background-color: lighten($warning-color, 30%);  
+  }
+  &.bagde-error{
+    background-color: lighten($error-color, 30%);  
+  }
+  &.bagde-primary{
+    background-color: $primary-color; 
+    color: $white-color;
+  }
+}

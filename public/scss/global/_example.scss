@@ -1,0 +1,43 @@
+//== Example style 
+
+//Grig
+.visible-grid{
+  [class^=col-]{
+    border: 1px solid lighten($primary-color, 30%);;
+    padding: $padding-primary-vertical $padding-primary-horizontal;
+    background-color: lighten($primary-color, 42%);
+    margin-bottom: $margin-primary;
+    min-height: 7.4rem;
+
+    p{
+      margin-top: $margin-primary;
+    }
+
+  }
+  @include clearfix();
+}
+.code-copy-link{
+  .material-icons{
+    font-size: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 0.5rem 0 0;
+    top: 0.2rem;
+    position: relative;
+  }
+}
+
+.border-example [class^=border] {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  margin: .5rem;
+  background-color: darken($white-color, 5%);
+}
+
+.display-example > div{
+  background-color: darken($white-color, 10%);
+  padding: 1rem;
+  display: inline-block;
+  margin: .5rem;
+}

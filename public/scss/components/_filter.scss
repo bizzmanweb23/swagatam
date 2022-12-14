@@ -1,0 +1,58 @@
+//
+// Filter
+//** --------------------------------------------------
+.filter-wrapper{
+    @include box-shadow($box-shadow-primary);
+    
+    .accordion-row{
+        border-bottom-color: $filter-border-color;
+        border-right-color: $filter-border-color;
+        border-left-color: $filter-border-color;
+
+        &:after{
+            display: none;
+        }
+
+        .accordion-container{
+            padding: ($filter-box-padding * 0.3) $filter-box-padding ($filter-box-padding * 0.3);
+        }
+
+        .accordion-heading {
+            padding: $filter-box-padding;
+            font-size: $filter-header-font-size;
+            text-transform: uppercase;
+            &:after{
+                text-transform: none;
+                background: none;
+                width: auto;
+                height: auto;
+                line-height: normal;
+                right: ($accordian-icon-gap / 2);
+                border: none;
+                color: inherit;
+                font-size: ($font-size-primary * 2.5);
+            }
+            
+        }
+        &.active{
+            .accordion-heading {
+                
+            }
+        }
+    }
+    .form-panel{
+        margin-bottom: $filter-box-padding;
+    }
+}
+.search-filter-panel{
+    .input-panel{
+        @include border-radius($border-radius $border-radius 0 0);
+    }
+}
+.filter-inner-container{
+   padding: ($filter-box-padding / 2) ($filter-box-padding / 2) 0; 
+   border: $border;
+   border-top: none;
+   background-color: $input-bg;
+   @include border-radius(0 0 $border-radius $border-radius);
+}

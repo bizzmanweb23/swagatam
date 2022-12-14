@@ -1,0 +1,75 @@
+//
+// Modal custom
+// ****************************
+.modal{
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    display: none;
+    opacity: 0;
+    width: 650px;
+  
+    &.show{
+     // top: 0;
+      display: block;
+      transition: translate .15s linear;
+      opacity: 1;
+      
+  
+      .modal-wrapper{
+        //transform: translate(0,0);
+       // opacity: 1;
+      }
+    }
+  }
+  
+  .modal-wrapper {
+    max-height: 92vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    //opacity: 0;
+  }
+  .modal-container{
+    width: 650px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    
+  }
+  .modal-header-panel{
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .modal-overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color:#000;
+    opacity: 0;
+  }
+  .show{
+    &.modal-overlay{
+      opacity: 0.5;
+    }
+  }
+  
+  .modal-show{
+    overflow: hidden;
+  }

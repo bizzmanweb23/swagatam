@@ -1,0 +1,25 @@
+// Gradient
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin gradient-horizontal($from, $to) {
+  background: -webkit-gradient(linear, left top, right bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+@mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
+  background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+  background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+
+@mixin gradient-radial($from: #555, $to: #333)  {
+  background-color: $from;
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($to), to($from));
+  background-image: -webkit-radial-gradient(circle, $to, $from);
+  background-image: -o-radial-gradient(circle, $to, $from);
+  background-repeat: no-repeat;
+}

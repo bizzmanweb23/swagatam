@@ -1,0 +1,84 @@
+//
+// Quick edit
+// ******************
+.quick-edit-wrapper{
+    position: relative;
+    padding-right: $quick-edit-wrapper-padding;
+}
+.quick-edit-panel{ 
+    padding: $padding-primary-vertical ($padding-primary-horizontal * 1.5) $padding-primary-vertical $padding-primary-horizontal;
+    position: absolute;
+    right: $quick-edit-right;
+    top: $quick-edit-top;
+    min-width: $quick-edit-min-width;
+    @include transition(all .3s ease-in-out);
+    
+    &.open{
+        background-color: $white-color;
+        @include box-shadow($quick-edit-shadow);
+        z-index: $zindex-modal;
+
+        .quick-edit-link{
+            color: $text-color;
+        }
+    }
+}
+.quick-edit-link{
+    color: $text-light-color;
+    font-size: $quick-edit-icon-size;
+    text-decoration: none;
+    display: inline-block;
+    display: inline-block;
+    position: absolute;
+    line-height: 1;
+    right: 0;
+    top: 0.5rem;
+    
+    &:hover,
+    &:focus{
+       color: $text-color;
+        text-decoration: none;
+    }
+}
+.quick-edit-list{
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    
+    li{
+        display: block;
+        
+        a{
+            display: block; 
+            padding: $padding-primary-vertical 0;
+            font-size: $quick-edit-font-size;
+            color: $text-color;
+            text-decoration: none;
+            
+            i{
+                font-size: $quick-edit-link-icon-size;
+                margin-right: 0.5rem;
+            }
+            
+            &:hover,
+            &:focus{
+                color: $primary-color; 
+                text-decoration: none;
+            }
+        }
+    }
+    
+}
+
+.overlay-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba($white-color,0.1);
+    @include transition(all .3s ease-in-out);
+    z-index: $zindex-modal-background;
+}

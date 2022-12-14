@@ -1,0 +1,38 @@
+//== Wrapper 
+.wrapper,
+.row {
+  @include clearfix();
+}
+
+.wrapper { 
+  @include wrapper-fixed;     
+
+  @media #{$breakpoint-small} {
+    width: $wrapper-small;
+  }
+  @media #{$breakpoint-medium} {
+    width: $wrapper-medium;
+  }
+  @media #{$breakpoint-large} {
+    width: $wrapper-large;
+  }   
+}
+
+.wrapper-fluid {
+  @include wrapper-fixed; 
+}
+
+.wrapper-fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+//== Row 
+.row{
+  margin-left:  ceil(($grid-gutter-width / -2));
+  margin-right: floor(($grid-gutter-width / -2));
+  @include clearfix;
+}

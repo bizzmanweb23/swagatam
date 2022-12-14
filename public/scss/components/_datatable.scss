@@ -1,0 +1,215 @@
+// Datatable
+// ***************
+
+//Data table
+.dataTables_scrollHeadInner,
+table.dataTable{
+  margin: 0 auto;
+}
+
+.dataTables_scrollHead{
+  table.dataTable{
+    border-bottom: 0;
+  }
+}
+.dataTables_scrollBody{
+  table.dataTable{
+    border-top: 0;
+
+    thead{
+      th{
+        &::after{
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+table.dataTable{
+  thead{
+    .sorting,
+    .sorting_asc, 
+    .sorting_desc, 
+    .sorting_asc_disabled, 
+    .sorting_desc_disabled{
+      cursor: pointer;
+    }
+
+    th{
+      padding: $data-table-padding;
+      position: relative;
+      
+      &::after{
+        @include font-awesome('\f0dc');
+        position: absolute;
+        right: 0.6rem;
+        top: 50%;
+        @include translate(0, -50%);
+      }
+
+      &.sorting_asc{
+        &::after{
+          @include font-awesome('\f0de');
+        }
+      }
+
+      &.sorting_desc{
+        &::after{
+          @include font-awesome('\f0dd');
+        }
+      }
+
+    }
+  }
+  .checkbox.no-text{
+    text-align: center;
+    label{
+      display: inline-block;
+    }
+  }
+}
+
+.dataTables_wrapper{
+  input,
+  select{
+    display: inline-block;
+    height: $input-height-primary;
+    padding: $padding-primary-vertical $padding-primary-horizontal;
+    font-size: ($font-size-primary*1.4);
+    line-height: $line-height-primary;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none; 
+    border: 1px solid $input-border;
+    @include border-radius($input-border-radius); 
+    @include transition(all .2s ease-in-out);
+    margin: 0 0.5rem;
+
+    &.box-shadow{
+        @include box-shadow($input-box-shadow);
+    }
+
+    // Placeholder
+    @include input-placeholder{
+        color: $input-placeholder-color;
+    }
+
+    &::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+  }
+}
+
+.dataTables_length{
+  float: left;
+  select{
+    padding-left: ($padding-primary-horizontal * 0.9);
+    padding-right: ($padding-primary-horizontal*2);
+    @include appearance();
+    background-position: 100% 0.7rem;
+    background-repeat: no-repeat;
+    background-image:url('data:image/svg+xml;utf8,<svg fill="#333333" height="24" viewBox="0 0 28 24" width="26" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/><path d="M0-.75h24v24H0z" fill="none"/></svg>');
+  }
+
+  @media #{$breakpoint-small-max} {
+    float: none;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+.dataTables_filter{
+  float: right;
+
+  @media #{$breakpoint-small-max} {
+    float: none;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+
+.dataTables_info{
+  float: left;
+  clear: both;
+  padding: $padding-primary 0;
+  @media #{$breakpoint-small-max} {
+    float: none;
+    padding: $padding-primary 0 0;
+    text-align: center;
+  }
+}
+.dataTables_paginate{
+  float: right;
+  padding: $padding-primary 0;
+  @media #{$breakpoint-small-max} {
+    float: none;
+    padding: $padding-primary 0;
+    text-align: center;
+  }
+}
+
+.dataTables_scroll{
+  .dataTable{
+    min-width: $table-responsive-width;
+  }
+}
+
+.paginate_button{
+  padding:$padding-primary-vertical $padding-primary-horizontal; 
+  font-size: $font-size; 
+  line-height: $line-height-primary; 
+  text-decoration: none;
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  border: 1px solid $pagination-border;
+  cursor: pointer;
+
+  &.previous{
+    @include border-radius($padinationborder-radius 0 0 $padinationborder-radius);
+  }
+  &.next{
+    @include border-radius(0 $padinationborder-radius $padinationborder-radius 0);
+  }
+  &:hover {
+    z-index: 2;
+    color: $pagination-hover-color;
+    background-color: $pagination-hover-bg;
+    border: 1px solid $pagination-hover-border;
+  }
+  &.current{
+    &,
+    &:hover,
+    &:focus {
+      z-index: 3;
+      color: $pagination-hover-color;
+      background-color: $pagination-hover-bg;
+      border: 1px solid $pagination-hover-border;
+      cursor: default;
+    }
+  }
+
+  &.disabled {
+    &,
+    &:hover,
+    &:focus {
+      color: $pagination-disabled-color;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border;
+      cursor: $cursor-disabled;
+    }
+
+  }
+
+}
+
+
+.check-header{
+  padding-right: 8px !important;
+  &:after,
+  &:before{
+    display: none !important;
+    
+  }
+}
+

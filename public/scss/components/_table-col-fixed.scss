@@ -1,0 +1,119 @@
+// Table row column fixed
+// ***************
+
+.ft_container{
+  overflow: hidden;
+
+  table { 
+    border-width: 0px; 
+    margin: 0; 
+    outline-style: none; 
+    background-color: $table-header-bg-fixed-col;
+
+    tr{
+      th,
+      td{
+        border-collapse: collapse;
+        border-color: $table-border-color;
+        border-style: solid;
+        border-top-width: 0px; 
+        border-left-width: 0px; 
+        border-right-width: 1px; 
+        border-bottom-width: 1px; 
+        overflow:hidden; 
+        word-wrap: break-word;
+        &:first-child{
+          border-left-width: 1px;
+        }
+      }
+      &:first-child{
+        th,
+        td{
+          border-top: 1px solid $table-border-color !important;
+        }
+      }
+    }
+
+    &.sorttable{
+      thead {
+        tr {
+          th { 
+            cursor: pointer; 
+            padding-right: 18px;
+            position: relative;
+            &::after{
+              @include font-awesome('\f0dc');
+              position: absolute;
+              right: 0.6rem;
+              top: 50%;
+              @include translate(0, -50%);
+            }
+            &.fx_sort_asc{ 
+              &::after{
+                @include font-awesome('\f0de');
+              }
+            }
+            &.fx_sort_desc{ 
+              &::after{
+                @include font-awesome('\f0dd');
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  tbody tr.ui-widget-content, 
+  thead.ui-widget-header { 
+    background-image: none; 
+  }
+}
+
+.ft_rel_container { 
+  position: relative; 
+  overflow: hidden; 
+  border-width: 0px; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.ft_r, .ft_rc { 
+  background-image: none; 
+}
+.ft_rc { 
+  position: absolute; 
+  z-index: 1005; 
+}
+.ft_r, .ft_c { 
+  position: relative; 
+}
+
+.ft_rwrapper, .ft_cwrapper { 
+  overflow: hidden; 
+  position: absolute; 
+  z-index: 1001; 
+  border-width: 0px;  
+  padding: 0px; 
+  margin: 0px; 
+}
+
+.ft_cwrapper{
+  @media #{$breakpoint-medium-max} {
+    height: 100% !important;
+  }
+}
+.ft_rwrapper{
+  @media #{$breakpoint-medium-max} {
+    width: 100% !important;
+  }
+}
+
+.ft_scroller { 
+  overflow: auto; 
+  height: 100%; 
+  padding: 0px; 
+  margin: 0px;
+}
+

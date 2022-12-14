@@ -1,0 +1,132 @@
+//
+// Heading
+// --------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+}
+
+h1{ 
+    font-size: $font-size-h1;
+    margin-top: 0;
+    margin-bottom: ($font-size-h1 * 0.6);
+    
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h1 * 0.94);
+        margin-bottom: ($font-size-h1 * 0.94);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h1 * 0.84);
+        margin-bottom: ($font-size-h1 * 0.84);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h1 * 0.7);
+        margin-bottom: ($font-size-h1 * 0.7);
+    }
+}
+h2{ 
+    font-size: $font-size-h2;
+    margin-top: 0;
+    margin-bottom: $font-size-h2;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h2 * 0.92);
+        margin-bottom: ($font-size-h2 * 0.92);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h2 * 0.85);
+        margin-bottom: ($font-size-h2 * 0.85);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h2 * 0.8);
+        margin-bottom: ($font-size-h2 * 0.8);
+    }
+}
+h3{ 
+    font-size: $font-size-h3;
+    margin-top: 0;
+    margin-bottom: $font-size-h3;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h3 * 0.92);
+        margin-bottom: ($font-size-h3 * 0.92);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h3 * 0.85);
+        margin-bottom: ($font-size-h3 * 0.85);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h3 * 0.8);
+        margin-bottom: ($font-size-h3 * 0.8);
+    }
+}
+h4{ 
+    font-size: $font-size-h4;
+    margin-top: 0;
+    margin-bottom: ($font-size-h4 * 0.6);
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h4 * 0.94);
+        margin-bottom: ($font-size-h4 * 0.94); 
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h4 * 0.88);
+        margin-bottom: ($font-size-h4 * 0.88);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h4 * 0.82);
+        margin-bottom: ($font-size-h4 * 0.82);
+    }
+}
+h5{ 
+    font-size: $font-size-h5;
+    margin-top: 0;
+    margin-bottom: $font-size-h5;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h5 * 0.94);
+        margin-bottom: ($font-size-h5 * 0.94);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h5 * 0.88);
+        margin-bottom: ($font-size-h5 * 0.88);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h5 * 0.82);
+        margin-bottom: ($font-size-h5 * 0.82);
+    }
+}
+h6{ 
+    font-size: $font-size-h6;
+    margin-top: 0;
+    margin-bottom: $font-size-h6;
+
+    @media #{$breakpoint-large-max} {
+        font-size: ($font-size-h6 * 0.96);
+    }
+    @media #{$breakpoint-medium-max} {
+        font-size: ($font-size-h6 * 0.9);
+
+    }
+    @media #{$breakpoint-small-max} {
+        font-size: ($font-size-h6 * 0.86);
+    }
+}
+
+.heading-text-small{
+    font-size: ($font-size-primary * 1.4);
+    display: block;
+    color: $black-light;
+}

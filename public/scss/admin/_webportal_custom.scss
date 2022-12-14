@@ -1,0 +1,54 @@
+
+.menu-collapse{
+    .slide-navigation-inner{
+        
+        .side-bar-menu {
+            li{
+                &.menu-title {
+                    padding: 12px 10px!important;
+                    pointer-events: none;
+                    cursor: default;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    color: $black-lighter;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.daily-plan-table{
+    .align-left{
+
+        .text-ellipsis{
+            width: 250px;
+        }
+    }
+}
+
+.daily-plan-table{
+    .align-center{
+        
+        .tooltip{
+            .tooltip-content{
+                min-width: 11rem;
+            }
+        }
+
+    }
+    
+}
+.admin-slide-navigation .side-bar-menu > li {
+    &.menu-title {
+        padding: 12px 10px!important;
+        pointer-events: none;
+        cursor: default;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: $black-lighter;
+        font-weight: 600;
+        text-align: center;
+    }
+}

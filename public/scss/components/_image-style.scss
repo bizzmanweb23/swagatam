@@ -1,0 +1,23 @@
+//
+// Image style
+.rounded-image{
+    @include border-radius($image-border-radius);
+}
+.circle-image{
+    @include border-radius(50%);
+}
+.thumbnail-image{
+    @include border-radius($image-border-radius - 2);
+    padding: $image-border-radius - 2;
+    border: $border;
+}
+//
+// Bg image style
+.bg-image{
+    @include bg-image();
+    @include box-square(120px);
+    margin: 0;
+    &.thumbnail-image{
+        background-size: calc(100% - 6px);
+    }
+}

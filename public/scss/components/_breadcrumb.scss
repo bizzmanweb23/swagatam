@@ -1,0 +1,55 @@
+// Breadcrumb
+.breadcrumb{
+    margin: 0 0 $margin-primary;
+    padding: 0;
+    background: none;
+    
+    li{
+        display: inline-block;
+        font-size: ($font-size-primary * 1.4);
+        color: $gray;
+        &.active{
+           color: $gray; 
+        }
+        +li{
+            &:before{
+                content: $breadcrumb-separator;
+                font-family: "Material Icons";
+                text-rendering: optimizeLegibility;
+                color: $black-light; 
+                top: 0.7rem;
+                position: relative;
+                line-height: 0.5;
+                font-size: ($font-size-primary * 2.2);
+
+            }
+        }
+        a{
+          color: $breadcrumb-active-color;  
+          text-decoration: none;
+
+          &:hover{
+              text-decoration: underline;
+          }
+        }
+    }
+}
+
+.breadcrumb-slash{
+    @extend .breadcrumb;
+
+    li{
+        +li{
+            &:before{
+                $breadcrumb-separator: "/";
+                content: $breadcrumb-separator;
+                padding: 0 $padding-es-horizontal;
+                font-size: ($font-size-primary * 1.8);
+                top: 0.2rem;
+            }
+
+        }
+    }
+}
+
+

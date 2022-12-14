@@ -1,0 +1,73 @@
+//
+// Tab
+// ****************************
+.tab-panel{
+    margin: $tab-margin;
+    .tab-panel{
+        margin:0; //-($tab-container-padding *1.1);
+    }
+}
+.tab-nav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: table;
+    width: 100%;
+
+    >li{
+        display: table-cell;
+        font-size: $tab-heading-font-size;
+        font-weight: $tab-heading-font-weight;
+        @media #{$breakpoint-medium-max} {
+            font-size: ($tab-heading-font-size * 0.8);
+        }
+
+        >a{
+            display: block;
+            text-decoration: none;
+            color: $black-darker;
+            background-color: $body-bg;
+            padding: $tab-heading-padding;
+            font-weight: $tab-heading-font-weight;
+            text-align: center;
+            border-bottom: $border;
+            position: relative;
+            @include transition(all 0.2s linear);
+           // background-color: $white-color;
+           &:after{
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: transparent;
+                @include transition(all 0.2s linear);
+            }
+        }
+
+        &.active{
+            >a{
+                color: $white-color;
+                background: $primary-color;
+                &:after{
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.tab-container{
+    border: $border;
+    border-top: none;
+    .tab-row{
+        padding: $tab-container-padding;
+        @media #{$breakpoint-medium-max} {
+            padding: ($tab-container-padding * 0.8);
+        }
+        display: none;
+        &.show{
+            display: block;
+        }
+    }
+}

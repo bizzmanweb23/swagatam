@@ -1,0 +1,17 @@
+// Flex
+@mixin flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin grid($flex) {
+  @if $flex {
+      @include flex;
+  } @else {
+      display: block;
+  }
+}
+
+/*
+@include grid(true);
+*/

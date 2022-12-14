@@ -1,0 +1,94 @@
+//
+// List
+// *********************************
+.list-no-bullet{
+    margin: 0 0 $margin-primary;
+    padding: 0;
+    li{
+        position: relative;
+        padding: 0;
+        list-style: none; 
+        margin: 0.6rem 0;
+
+        ul{
+           padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.list{
+    @extend .list-no-bullet;
+
+    li{
+        padding: 0 0 0 $ul-padding-left;
+
+        &:after{
+            content: "";
+            position: absolute;
+            width: 0.6rem;
+            height: 0.6rem;
+            @include border-radius(50%);
+            background-color: $text-color;
+            top: 0.6rem;
+            left: 0;
+        }
+
+    }
+}
+
+.list-left-icon{
+    margin: 0 0 $margin-primary;
+    padding: 0; 
+    li{
+        position: relative;
+        padding: $padding-la-vertical 0 $padding-la-vertical $ul-icon-padding-left;
+        list-style: none;
+        margin: 0.6rem 0;
+        border-bottom: $border;
+
+        &:last-child{
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        a{
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        
+        .list-heading{
+            display: block;
+            font-weight: $list-heading-font-weight;
+            color: $primary-color;
+            text-decoration: none;
+        }
+
+        .material-icons{
+            font-size: ($font-size-primary * 2.2);
+            color: $primary-color;
+            position: absolute;
+            left: 0;
+            top: ($padding-la-vertical - 0.1rem);
+        }
+    }
+
+    &.no-border{
+        li{
+            margin: 0;
+            border: none;
+            padding-top: 0;
+            .material-icons{
+                top:-.1rem;
+            }
+        }
+    }
+}

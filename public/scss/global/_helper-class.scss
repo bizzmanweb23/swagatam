@@ -1,0 +1,244 @@
+// Text style 
+.font-lighter{
+    font-weight: 100 !important;
+}
+.font-light{
+    font-weight: 300 !important;
+}
+.font-semibold{
+    font-weight: 500 !important;
+}
+.font-bold{
+    font-weight: 700 !important;
+}
+.font-black{
+    font-weight: 900 !important;
+}
+.font-italic{
+    font-style: italic !important;
+}
+.text-border{
+    padding-bottom: 5px;
+    border-bottom: $text-border;
+    
+}
+.text-border-right{
+    overflow: hidden;
+    span{
+        position: relative;
+        padding-right: $border-padding;
+        &:after{
+            content: "";
+            width: 999999px;
+            height: 1px;
+            background-color: lighten($black, 75%);
+            position: absolute;
+            top: 50%;
+            left: 100%;
+        }
+    }    
+}
+.text-border-center{
+    @extend .text-border-right;
+    text-align: center;
+    span{
+        padding-left: $border-padding;
+
+        &:before{
+            content: "";
+            width: 999999px;
+            height: 1px;
+            background-color: lighten($black, 75%);
+            position: absolute;
+            top: 50%;
+            right: 100%;
+        }
+    }    
+}
+.text-border-left{
+    @extend .text-border-right;
+    text-align: right;
+    span{
+        padding-left: $border-padding;
+        padding-right: 0;
+        &:after{
+            left: auto;
+            right: 100%;
+        }
+    }    
+}
+
+//Text align
+.align-left{
+    text-align: left;
+}
+.align-center{
+    text-align: center;
+}
+.align-right{
+    text-align: right;    
+}
+.align-top{
+    vertical-align: top;
+    td,
+    th{
+        vertical-align: top;
+    }
+}
+
+@media #{$breakpoint-small-max} {
+    .align-center-es{
+        text-align: center !important;
+    }
+}
+@media #{$breakpoint-medium-only} {
+    .align-center-sm{
+        text-align: center !important;
+    }
+}
+@media #{$breakpoint-large-only} {
+    .align-center-me{
+        text-align: center !important;
+    }
+}
+@media #{$breakpoint-large} {
+    .align-center-la{
+        text-align: center !important;
+    }
+}
+
+
+.align-justify{
+    text-align: justify;
+}
+.align-nowrap{
+    white-space: nowrap;
+}
+.text-ellipsis{
+    @include text-ellipsis();
+}
+.text-nowrap{
+    white-space: nowrap !important;
+}
+.text-breake{
+    word-break: break-all;
+}
+//Transformation classes
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+//blockquote
+blockquote{
+    font-size: ($font-size-primary * 1.8);
+    margin: $blockquote-margin;
+    p{
+        margin-bottom: ($font-size-primary * 1.8)/2;
+    }
+    footer{
+        font-size: ($font-size-primary * 1.2); 
+        color: $black-lighter;
+    }
+}
+
+
+//Div center
+.center-block {
+    @include push-auto();
+}
+
+//Color
+.primary-color{
+    color: $primary-color;
+}
+.secondary-color{
+    color: $secondary-color;
+}
+.success-color{
+    color: $success-color;
+}
+.info-color{
+    color: $info-color;
+}
+.warning-color{
+    color: $warning-color;
+}
+.error-color{
+    color: $error-color;
+}
+
+//BG color
+.bg-heading{
+    color: $white-color;
+    background-color: $primary-color;
+    padding: 5px 10px;
+    @include border-radius($border-radius);
+
+    ul{
+        li{
+            margin: 0 0 0.5rem;
+            &:only-child{
+                margin: 0;
+            }
+        }
+    }
+
+}
+.bg-primary,
+.bg-secondary,
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-error,
+.bg-gray{
+    color: $white-color;
+    padding: floor(($grid-gutter-width / 2));
+    
+}
+.bg-primary{
+    background-color: $primary-color;
+}
+.bg-secondary{
+    background-color: $secondary-color;
+}
+.bg-success{ 
+    background-color: $success-color;
+}
+.bg-info{
+    background-color: $info-color;
+}
+.bg-warning{
+    background-color: $warning-color;
+}
+.bg-error{
+    background-color: $error-color;
+}
+.bg-gray{
+    background-color: $black-light;
+}
+
+.page-message{
+    margin: 0 0 $margin-primary;
+    z-index: $zindex-page-message;
+    font-size: ($font-size-primary * 1.6);
+}
+
+
+
+//Text hide
+.text-hide{
+    @include text-hide();
+}
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+// Tables
+@mixin table-striped-hover($state, $background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  table > thead > tr,
+  table > tbody > tr,
+  table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: lighten($background, 34%);
+      color: darken($background, 5%);
+    }
+  }
+
+  // Hover states for .table-hover
+  .table-hover > tbody > tr {
+    > td.#{$state}:hover,
+    > th.#{$state}:hover,
+    &.#{$state}:hover > td,
+    &:hover > .#{$state},
+    &.#{$state}:hover > th {
+      background-color: darken($background, 5%);
+    }
+  }
+}
+//@include table-striped-hover('class', #ccc);
+
+//Only bg color change no text color
+@mixin table-light-bg($state, $background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  table > thead > tr,
+  table > tbody > tr,
+  table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: lighten($background, 58%);
+    }
+  }
+}

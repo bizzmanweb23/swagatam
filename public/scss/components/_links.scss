@@ -1,0 +1,39 @@
+//
+// Links style
+// --------------------------------------------------
+.link-primary{
+    @include text-link($primary-color);
+}
+.link-secondary{
+    @include text-link($secondary-color);
+}
+.link-gray{
+    @include text-link($text-color);
+}
+.decoration-none{
+    text-decoration: none;
+}
+.text-decoration{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.code-copy-link{
+    @extend .decoration-none;
+    padding: $padding-primary-vertical;
+    position: absolute;
+    right: $padding-primary-vertical;
+    top: $padding-primary-vertical;
+    @include border-radius($border-radius);
+
+    &:hover{
+        background-color: $primary-color;
+        color:$white-color;
+    }
+
+}
+
+
+

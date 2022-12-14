@@ -1,0 +1,45 @@
+//
+// Media
+// ****************************
+.media-row{
+    @include clearfix();
+    margin: 0 0 $margin-primary;
+    .media-row{
+        margin: $margin-primary 0 0 0;
+    }
+    .media-wrapper:first-child{
+        margin-top: 0;
+    }
+}
+.media-left-part{
+    width: $media-image-width;
+    display: table-cell;
+    vertical-align: top;
+
+    @media #{$breakpoint-small-max} {
+        width: ($media-image-width * 0.85);
+    }
+    
+    img{
+        display: block;
+        padding: 3px;
+        border: $border;
+        @include border-radius($media-image-radius);
+    }
+
+    
+}
+.media-content-part{
+    display: table-cell;
+    vertical-align: top;
+    padding-left: floor($grid-gutter-width / 2);
+
+    h4{
+        margin-bottom: $font-size-h4/4;
+    }
+    p{
+        margin-bottom: 0;
+    }
+}
+
+

@@ -1,0 +1,14 @@
+ // Icon
+// *******************************
+.icon-part{
+    display: inline-block;
+    @include box-square($icon-bg-width);
+    @include border-radius(50%);
+    background-color: $icon-bg;
+    box-shadow: $icon-shadow;
+    font-size: $icon-font-size;
+    color: $icon-font-color;
+    text-align: center;
+    line-height: $icon-line-height;
+    margin-bottom: $margin-primary;
+}

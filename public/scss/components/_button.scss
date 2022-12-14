@@ -1,0 +1,346 @@
+//
+// Button
+// --------------------------------------------------
+.button {
+    display: inline-block;
+    margin: 0 2px; // For input.button
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: none;
+    white-space: nowrap;
+    @include box-shadow($button-box-shadow);
+    @include button-size(($button-padding-vertically), $button-padding-horizontal, $button-font-size, $button-font-weight, $line-height-primary, $button-border-radius);
+    @include user-select(none);
+    @include btn-bg-white-text($primary-color);
+    font-family: $font-family-sans-serif;
+
+    &.only-icon{
+        padding: $button-padding-vertically ($button-padding-vertically *1.4);
+        .material-icons{
+            margin: 0 -3px;
+            line-height: 0.3;
+            top: 6px;
+            font-size: ($font-size-primary * 2.4);
+        }
+        i{
+            font-size: ($button-font-size * 0.85);
+            top: 0;
+            margin-right: 0;
+        }
+    }
+    
+
+    
+    .material-icons{
+        line-height: 0.3;
+        position: relative;
+        top: 5px;
+        left: -2px;
+        margin-right: 0;
+    }
+    i{
+        font-size: ($font-size-primary * 2);
+        position: relative;
+        top: 0;
+    }
+    .material-icons{
+        font-size: ($font-size-primary * 2.0);
+    }
+
+    &.shadow{
+        @include button-shadow();
+    }
+    &.border{
+        @include btn-border($primary-color);
+    }
+    &.gray-text{
+        @include btn-bg-dark-text($black-lighter);
+    }
+
+    &.stroke-style{
+        @include stroke-style($primary-color);
+
+        &.active,
+        &:hover{
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: $white-color !important;
+        }
+    }
+
+}
+
+a.button {
+    &.disabled,
+    fieldset[disabled] & {
+        pointer-events: none;
+    }
+}
+
+// Button Sizes
+.button-el {
+    @include button-size($padding-el-vertical, $padding-el-horizontal, $font-size-el, $button-font-weight-la, $line-height-la, $btn-border-radius-la);
+    i,
+    .material-icons{
+        font-size: ($font-size-primary * 2.6);
+        line-height: 0.8;
+    }
+}
+.button-la {
+    @include button-size($padding-la-vertical, $padding-la-horizontal, $font-size, $button-font-weight-la, $line-height-la, $btn-border-radius-la);
+    i,
+    .material-icons{
+        font-size: ($font-size-primary * 2.6);
+        line-height: 0.8;
+    }
+}
+.button-sm {
+    @include button-size($padding-sm-vertical, $padding-sm-horizontal, $font-size-sm, $button-font-weight-sm, $line-height-sm, $btn-border-radius-sm);
+    i,
+    .material-icons{
+        line-height: 0.3;
+        font-size: ($font-size-sm * 1.2);
+        top: 1px;
+    }
+
+    &.only-icon{
+        i,
+        .material-icons{
+            top: 5px;
+        }
+    }
+}
+.button-es {
+    @include button-size($padding-es-vertical, $padding-es-horizontal, $font-size-sm, $button-font-weight-es, $line-height-sm, $btn-border-radius-es);
+    i,
+    .material-icons{
+        font-size: ($font-size-primary * 2);
+        top: 4px;
+        margin-right: 3px;
+        line-height: 0.3;
+    }
+}
+
+// Button color
+
+.button-secondary {
+    @include btn-bg-white-text($secondary-color);
+    &.stroke-style{
+        @include stroke-style($secondary-color);
+    }
+    &.icon-button{
+        @include text-link($secondary-color);
+    }
+    
+}
+.button-green {
+    @include btn-bg-white-text($success-color);
+    &.stroke-style{
+        @include stroke-style($success-color);
+    }
+    &.icon-button{
+        @include text-link($success-color);
+    }
+    
+}
+
+.button-blue {
+    @include btn-bg-white-text($info-color);
+    &.stroke-style{
+        @include stroke-style($info-color);
+    }
+    &.icon-button{
+        @include text-link($info-color);
+    }
+    
+}
+// Warning appears as orange
+.button-warning {
+    @include btn-bg-white-text($warning-color);
+    &.stroke-style{
+        @include stroke-style($warning-color);
+    }
+    &.icon-button{
+        @include text-link($warning-color);
+    }
+    
+}
+.button-red {
+    @include btn-bg-white-text($error-color);
+    &.stroke-style{
+        @include stroke-style($error-color);
+    }
+    &.icon-button{
+        @include text-link($error-color);
+    }
+}
+.button-gray{
+    @include btn-bg-white-text($gray);
+    &.stroke-style{
+        @include stroke-style($gray);
+    }
+    &.icon-button{
+        @include text-link($gray);
+    }
+    
+}
+
+// Block button
+
+.button-block {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+// Vertically space 
+.button-block + .button-block {
+    margin-top: 5px;
+}
+
+//Icon button
+.icon-button{
+    display: inline-block;
+    @include text-link($primary-color);
+    margin: 0 4px;
+    text-decoration: none;
+    padding: 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    font-size: $icon-button-font-size;
+    line-height: $icon-button-font-size;
+    i{
+        margin-top: 0;
+    }
+}
+
+// Button groups
+// ************
+
+// Make the div behave like a button
+.button-group,
+.button-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; 
+  > .button {
+    position: relative;
+    
+    &:hover,
+    &:active,
+    &.active {
+      z-index: 20;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.button-group {
+  .button + .button,
+  .button + .button-group,
+  .button-group + .button,
+  .button-group + .button-group {
+    margin-left: -1px;
+  }
+  > .button {
+    float: left;
+    @include border-radius(0);
+    &:first-child{
+        @include border-radius($button-border-radius 0 0 $button-border-radius);
+    }
+    &:last-child{
+        @include border-radius(0 $button-border-radius $button-border-radius 0);
+    }
+  }
+  
+}
+
+// Vertical button groups
+// ----------------------
+
+.button-group-vertical {
+    > .button,
+    > .button-group,
+    > .button-group > .button {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+    > .button {
+        @include border-radius(0);
+        &:first-child{
+            @include border-radius($button-border-radius $button-border-radius 0 0);
+        }
+        &:last-child{
+            @include border-radius(0 0 $button-border-radius $button-border-radius);
+        }
+      }
+
+  
+    > .button + .button,
+    > .button + .button-group,
+    > .button-group + .button,
+    > .button-group + .button-group {
+      margin-top: -1px;
+      margin-left: 0;
+    }
+  }
+
+//Button group size
+.button-group-el{
+    > .button{
+        @extend .button-el;
+    }
+}
+.button-group-la{
+    > .button{
+        @extend .button-la;
+    }
+}
+.button-group-sm{
+    > .button{
+        @extend .button-sm;
+    }
+}
+.button-group-es{
+    > .button{
+        @extend .button-es;
+    }
+}
+
+// Justified button groups
+// ----------------------
+
+.button-group-justify {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    > .button,
+    > .button-group {
+        float: none;
+        display: table-cell;
+        width: 1%;
+
+        &:not(:first-child):not(:last-child)>.button{
+            @include border-radius(0);
+        }
+        &:first-child:not(:last-child)>.button:last-child{
+            @include border-radius($button-border-radius 0 0 $button-border-radius);
+        }
+        &:last-child:not(:first-child)>.button:first-child{
+            @include border-radius(0 $button-border-radius $button-border-radius 0);
+        }
+    }
+    > .button-group .button {
+        width: 100%;
+    }
+
+}
+
+

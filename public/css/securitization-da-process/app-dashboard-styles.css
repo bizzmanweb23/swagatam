@@ -1,0 +1,84 @@
+.glyphicon {
+	cursor:pointer !important;
+}
+
+.input-control {
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.input-control.txtbox-sm {
+	width: 50px !important;
+}
+.input-control.txtbox-mid {
+	width: 100px !important;
+}
+
+/* ==== bootstrap 3.0 checkbox custom classes [Begin] ==== */
+.checkbox label:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.checkbox .cr {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #a9a9a9;
+  border-radius: .25em;
+  width: 1.3em;
+  height: 1.3em;
+  float: left;
+  margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon {
+  position: absolute;
+  font-size: .8em;
+  line-height: 0;
+  top: 50%;
+  left: 15%;
+}
+/* ==== bootstrap 3.0 checkbox custom classes [End] ==== */
+
+/* ==== Custom Class for radio-button(s) [Begin] ==== */
+.form-panel.radio-input {
+	margin-bottom: 5px !important;
+}
+.hide-div {
+  display: none;
+}
+/* ==== Custom Class for radio-button(s) [End] ==== */
+
+/* ==== For Jquery-UI-DatePicker [Begin] ==== */
+.ui-datepicker {
+	z-index: 9999 !important;
+}
+/* ==== For Jquery-UI-DatePicker [End] ==== */
+
+/* ##### DISABLED input CSS [Begin] ##### */
+:disabled {
+	background-color: #e6e6e6 !important;
+	opacity:1;
+	cursor: not-allowed  !important;
+}
+option:disabled {
+	background-color: #e6e6e6 !important;
+	opacity:1;
+	cursor: not-allowed  !important;
+}
+.chosen-disabled {
+	background-color: #e6e6e6 !important;
+	cursor: not-allowed  !important;
+}
+/* ##### DISABLED input CSS [End] ##### */

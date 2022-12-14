@@ -1,0 +1,38 @@
+//Display 
+//***********************
+
+.block {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden !important;
+}
+.display-inline-block{
+  display: inline-block !important;
+}
+.display-inline{
+  display: inline !important;
+}
+.display-table{
+  display: table !important;
+}
+.display-table-cell{
+  display: table-cell !important;
+}
+.display-table-row{
+  display: table-row !important;
+}
+.display-flex{
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
+.display-inline-flex{
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
+  display: inline-flex!important;
+}
+

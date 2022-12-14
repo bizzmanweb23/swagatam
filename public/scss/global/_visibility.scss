@@ -1,0 +1,109 @@
+//
+// Visiability
+// ************************
+
+@include invisible('.visible-es');
+@include invisible('.visible-sm');
+@include invisible('.visible-me');
+@include invisible('.visible-la');
+@include invisible('.visible-el'); 
+
+.visible-es-block,
+.visible-es-inline,
+.visible-es-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-me-block,
+.visible-me-inline,
+.visible-me-inline-block,
+.visible-la-block,
+.visible-la-inline,
+.visible-la-inline-block,
+.visible-el-block,
+.visible-el-inline,
+.visible-el-inline-block {
+  display: none !important;
+}
+
+@media #{$breakpoint-small-max} {
+  @include visible('.visible-es');
+  @include invisible('.hidden-es');
+
+  .visible-es-block {
+    display: block !important;
+  }
+  .visible-es-inline {
+    display: inline !important;
+  }
+  .visible-es-inline-block {
+    display: inline-block !important;
+  }
+
+}
+
+@media #{$breakpoint-medium-only} {
+  @include visible('.visible-sm');
+  @include invisible('.hidden-sm');
+
+  .visible-sm-block {
+    display: block !important;
+  }
+  .visible-sm-inline {
+    display: inline !important;
+  }
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+
+}
+
+@media #{$breakpoint-large-only} {
+  @include visible('.visible-me');
+  @include invisible('.hidden-me');
+
+  .visible-me-block {
+    display: block !important;
+  }
+  .visible-me-inline {
+    display: inline !important;
+  }
+  .visible-me-inline-block {
+    display: inline-block !important;
+  }
+
+}
+
+@media #{$breakpoint-large} {
+  @include visible('.visible-la');
+  @include invisible('.hidden-la');
+
+  .visible-la-block {
+    display: block !important;
+  }
+  .visible-la-inline {
+    display: inline !important;
+  }
+  .visible-la-inline-block {
+    display: inline-block !important;
+  }
+
+}
+ 
+
+// Print 
+//*********************
+@media print {
+  @include visible('.visible-print');
+}
+.visible-print-block { 
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+
+@media print {
+  @include invisible('.hidden-print');
+}

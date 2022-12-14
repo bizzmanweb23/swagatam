@@ -1,0 +1,82 @@
+//
+// Accordian
+// --------------------------------------------------
+.accordion-panel{
+    margin: $accordian-margin;
+}
+.accordion-row{
+    border: $border;
+    background-color: $white-color;
+    position: relative;
+    + .accordion-row{
+        margin-top: -1px;
+    }
+
+    .accordion-heading{
+        font-size: $accordian-heading-font-size;
+        font-weight: $accordian-heading-font-weight;
+        padding: $accordian-heading-padding-vertical $accordian-heading-padding-right $accordian-heading-padding-vertical $accordian-heading-padding-left;
+        color: $black-darker;
+        position: relative;
+        cursor: pointer;
+        &:after{
+            @include box-square-center(30px); 
+            @include pseudo($content:$accordian-icon);
+            @include border-radius(50%);
+            border: $border;
+            font-family: 'Material Icons';
+            color: $black-darker;
+            font-size: ($font-size-primary * 3);
+            right: $accordian-icon-gap;
+            top: 50%;
+            @include translate(0, -50%);
+            @include transition(all 0.2s linear);
+        }
+
+        @media #{$breakpoint-medium-max} {
+            font-size: ($accordian-heading-font-size * 0.9);
+            padding: ($accordian-heading-padding-vertical * 0.75) ($accordian-heading-padding-right * 0.8) ($accordian-heading-padding-vertical * 0.75) ($accordian-heading-padding-left * 0.75);
+
+            &:after{
+                right: ($accordian-icon-gap * 0.75);
+            }
+        }
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: 0;
+        width: 3px;
+        height: calc(100% - 20px);
+        background-color: transparent;
+        @include transition(all 0.2s linear);
+    }
+
+    &.active{
+        .accordion-heading{
+            color: $primary-color;
+            &:after{
+                content: $accordian-active-icon;
+                color: $white-color;
+                border-color: $primary-color;
+                background-color: $primary-color;
+            }
+        }
+        &:after{
+            background-color: $primary-color;
+        }
+
+    }
+}
+
+.accordion-container{
+    padding: $accordian-container-padding-vertical $accordian-container-padding-horizontal;
+    @media #{$breakpoint-medium-max} {
+        padding: ($accordian-container-padding-vertical * 0.75) ($accordian-container-padding-horizontal * 0.75);  
+    }
+    display: none;
+    &.show{
+        display: block;
+    }
+}

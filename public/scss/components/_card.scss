@@ -1,0 +1,97 @@
+//
+// Card
+// ****************************
+.card{
+    @include border-radius($card-radius);
+    @include box-shadow($card-shadow);
+    margin: 0 0 $card-margin;
+    background-color: $card-bg;
+
+    &.card-primary{
+        background-color: $primary-color;
+        color: $primary-card-text-color;
+        
+    }
+    &.card-error{
+        background-color: lighten( $error-color ,30);
+        color: darken($error-color,10)        
+    }
+
+    p{
+        margin-bottom: $padding-primary-horizontal;
+    }
+
+    .card-container{
+        padding: $card-padding;
+    }
+
+    .card-header{
+        padding: $padding-sm-horizontal;
+        border-bottom: $border;
+        display: -webkit-flex;
+        display: flex;
+        > h2,
+        > h3,
+        > h4,
+        > h5{
+            margin: 0;
+        }
+
+        figure{
+            @include box-square($card-avatar-size);
+            margin: 0 ($margin-primary/2) 0 0;
+            img{
+                @include border-radius(50%);
+            }
+        }
+        article{
+            h4{
+                margin: 0 0 0.2rem;
+            }
+            .avatar-date{
+                display: block;
+                font-size: $font-size-sm;
+                color: $text-light-color;
+            }
+        }
+
+    }
+    .card-image{
+        img{
+            @include border-radius($card-radius $card-radius 0 0);
+        }
+    }
+}
+
+@media #{$breakpoint-small} {
+    .card-masonry{
+        -webkit-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: $card-masonry-gap;
+        column-gap: $card-masonry-gap;
+
+        .card{
+            flex-direction: column;
+            display: inline-block;
+            width: 100%;
+        }
+
+    }
+}
+
+@media #{$breakpoint-medium} {
+    .card-masonry{
+        -webkit-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: $card-masonry-gap;
+        column-gap: $card-masonry-gap;
+
+        .card{
+            flex-direction: column;
+            display: inline-block;
+            width: 100%;
+        }
+
+    }
+}
+

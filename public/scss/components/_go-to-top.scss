@@ -1,0 +1,25 @@
+//
+// Go to top
+// --------------------------------------------------
+.go-to-top{
+    text-transform: uppercase;
+    position: fixed;
+    text-decoration: none;
+    font-size: $go-top-font-size;
+    right: $go-top-position;
+    bottom: $go-top-position;
+    font-weight: $go-top-font-weight;
+    display: none;
+    z-index: $zindex-gototop;
+}
+.go-to-top i{
+    background-color: $primary-color;
+    color: $white-color;
+    font-size: $go-top-icon-font-size;
+    display: block;
+    @include border-radius($border-radius);
+    @include box-shadow($box-shadow-primary);
+    text-align: center;
+    padding: $go-top-icon-margin;
+    margin: 0 ($go-top-icon-margin * 1.7) $go-top-icon-margin;
+}

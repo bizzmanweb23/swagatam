@@ -1,0 +1,19 @@
+// overlay
+@mixin overlay() {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  @include opacity(.8);
+  background: $black;
+}
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+//Use
+/*.div{
+  @include opacity(.8);
+}*/

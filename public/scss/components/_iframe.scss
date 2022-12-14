@@ -1,0 +1,19 @@
+//
+// Iframe
+// ****************************
+.iframe-container{
+    height: $iframe-height;
+    position: relative;
+
+    @media #{$breakpoint-small-max} {
+        height: ($iframe-height * 0.84);
+    }
+
+    iframe{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}

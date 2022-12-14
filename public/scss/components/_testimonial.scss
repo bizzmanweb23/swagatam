@@ -1,0 +1,42 @@
+//
+// Testimonial
+// ******************
+.testimonial-image{
+    @include box-square($testimonial-image-size);
+    @include box-shadow($testimonial-image-shadow);
+    @include border-radius($testimonial-image-radius);
+    border: $testimonial-image-border;
+    margin: 0 auto (-$testimonial-top-img-padding);
+    display: block;
+    position: relative;
+
+    @media #{$breakpoint-small-max} {
+        @include box-square(($testimonial-image-size * 0.9));
+        margin: 0 auto (-($testimonial-top-img-padding * 0.9));
+    }
+}
+.testimonial-container{
+    background-color: $testimonial-bg;
+    @include border-radius($testimonial-radius);
+    padding: ($testimonial-top-img-padding + 1.5rem) $testimonial-padding $testimonial-padding $testimonial-padding;
+
+    @media #{$breakpoint-large-max} {
+        padding: ($testimonial-top-img-padding + 1rem) ($testimonial-padding * 0.8) ($testimonial-padding * 0.8) ($testimonial-padding * 0.8);
+    }
+}
+.testimonial-slider{
+    .slick-prev, 
+    .slick-next{
+        margin-top: ($testimonial-top-img-padding/2);
+    }
+}
+.testimonial-client{
+    display: block;
+    font-size: $testimonial-client-font-size;
+    color: $text-light-color;
+
+    strong,
+    span{
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,61 @@
+// Global
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    @include border-box();
+}
+*:focus {
+    outline: none;
+}
+
+html{
+    font-size: 10px;
+}
+body{
+    font-size: $font-size;
+    background-color: $body-bg;
+    line-height: $line-height-primary;
+    color: $text-color;
+    font-family: $font-family-primary;
+}
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+a{
+    @include text-link($text-color);
+}
+ul,
+ol{
+    padding: 0 0 0 $ul-padding-left;
+}
+p{
+    margin: $paragraph-margin;
+}
+//Clearfix
+.clearfix{
+    @include clearfix();
+}
+
+//Code
+.code-container{
+    border: $border;
+    @include border-radius($border-radius);
+    margin: $paragraph-margin;
+    background-color: lighten($black, 95%);
+    padding: $padding-primary-vertical $padding-primary-horizontal;
+    overflow: auto;
+    position: relative;
+}
+
+//icon
+.material-icons{
+    font-size: inherit;
+}
+
+
+

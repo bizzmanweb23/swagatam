@@ -1,0 +1,36 @@
+.mCustomScrollbar{
+
+    padding-right: 8px;
+
+    &.mCS_no_scrollbar{
+        padding: 0;
+    }
+}
+.mCSB_outside+.mCSB_scrollTools {
+    right: 0;
+    width: 8px;
+    margin: 6px 0;
+}
+.mCSB_scrollTools{
+    .mCSB_dragger{
+        .mCSB_dragger_bar{
+            width: 8px;
+            background-color: lighten($primary-color, 10%);
+        }
+        &.mCSB_dragger_onDrag{
+            .mCSB_dragger_bar{
+                background-color: lighten($primary-color, 15%);
+            }
+            &:active{
+                .mCSB_dragger_bar{
+                    background-color: lighten($primary-color, 15%);
+                } 
+            }
+        }
+    }
+    .mCSB_draggerRail{
+        background-color: $secondary-color;
+        width: 8px;
+    }
+}
+

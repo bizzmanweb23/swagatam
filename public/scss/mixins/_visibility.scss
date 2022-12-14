@@ -1,0 +1,18 @@
+// Visiability
+//********************************
+
+@mixin visible($class) {
+  #{$class} {
+    display: block !important;
+  }
+  table#{$class}  { display: table !important; }
+  tr#{$class}     { display: table-row !important; }
+  th#{$class},
+  td#{$class}     { display: table-cell !important; }
+}
+
+@mixin invisible($class) {
+  #{$class} {
+    display: none !important;
+  }
+}

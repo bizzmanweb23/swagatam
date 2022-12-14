@@ -1,0 +1,131 @@
+// Gallery
+// *******************************
+.gallery-thumb{
+    margin: 0 0 $gal-thumb-margin;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    @include box-shadow($gal-box-shadow);
+    @include border-radius($gal-radius);
+    border: $gal-image-border;
+}
+
+.gallery-thumb-image{
+    height: $gal-thumb-height;
+    @include bg-image();
+    margin: 0;
+    @include transition(all 2s cubic-bezier(0.19, 1, 0.22, 1));
+    &:hover{
+        .gal-img-title{
+            &:after{
+                @include opacity(01);
+            }
+
+            span{
+                bottom: 0;
+            }
+        }
+    }
+    
+}
+
+.zoom-icon{
+
+    .gallery-thumb-image{
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $zoom-overlay;
+            left: 0;
+            top: 0;
+            @include opacity(0);
+            @include border-radius($gal-radius);
+            @include transition(all 0.6s cubic-bezier(0.19, 1, 0.22, 1));
+            
+        }
+
+
+        &:after{
+            content: "search";
+            font-family: "Material Icons";
+            text-rendering: optimizeLegibility;
+            font-feature-settings: 'liga' 1;
+            font-style: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            font-size: $zoom-icon-size;
+            color: $zoom-icon-color;
+            text-decoration: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transform (translate(-50%, -50%) scale(3));
+            @include opacity(0);
+            @include transform-origin(center);
+            @include transition(all 0.4s cubic-bezier(0.19, 1, 0.22, 1));
+        }
+
+        &:hover{
+            &:before{
+                @include opacity(1);
+            }
+            &:after{
+                @include opacity(1);
+                @include transform (translate(-50%, -50%) scale(1));
+            }
+        }
+        
+    }
+}
+
+.zoom-effect{
+    .gallery-thumb-image{
+        @include transform-origin(center);
+        @include transform (scale(1.4) rotate(15deg));
+    }
+
+    &:hover{
+        .gallery-thumb-image{
+            @include transform (scale(1) rotate(0));
+        }
+    }
+}
+
+.gal-img-title{
+    color: $gal-title-color;
+    font-size: $gal-title-font-size;
+    margin: 0;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        @include gradient(transparent, $gal-title-bg);
+        @include transition(all 0.3s cubic-bezier(0.19, 1, 0.22, 1));
+        @include border-radius(0 0 $gal-radius $gal-radius);
+        @include opacity(0);
+
+    }
+
+    span{
+        display: block;
+        position: absolute;
+        bottom: -300px;
+        @include transition(all 0.4s cubic-bezier(0.19, 1, 0.22, 1));
+        z-index: 100;
+        width: 100%;
+        padding: $padding-primary-horizontal;
+    }
+}

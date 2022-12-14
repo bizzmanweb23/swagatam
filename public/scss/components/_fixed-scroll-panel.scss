@@ -1,0 +1,18 @@
+//
+// Fixed scroll panel
+// --------------------------------------------------
+
+.fixed-scroll-fixed{
+    @media #{$breakpoint-small} {
+        position: fixed; 
+        z-index: $zindex-fixed-scroll;
+        max-height: 100%;
+        overflow: auto;
+    }
+    @media #{$breakpoint-small-max} {
+        width: auto !important;
+        max-height: inherit !important;
+    }
+    
+    
+}

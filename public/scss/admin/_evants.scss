@@ -1,0 +1,88 @@
+//Alert Popup View Section
+
+.alert-popup-view{
+    padding: 0 !important;
+    border-radius: $border-radius-el;
+    overflow: hidden;
+    background-color: transparent;
+    
+
+    .alert-button{
+        
+        .button{
+            width: 50%;
+            margin:0;
+            border-radius: 0;
+            float: left;
+            padding-top:$padding-el-vertical;
+            padding-bottom:$padding-el-vertical;
+
+            &:first-child{
+                border-radius: 0 0 0 $border-radius-el;
+            }
+
+            &:last-child{
+                border-radius: 0 0 $border-radius-el 0;
+            }
+
+        }
+        &.alert-success{
+            .button{
+                width: 100%;
+            }
+        }
+    }
+}
+
+//Tooltip 
+.action-tooltip{
+    &.tooltip-width{
+        .tooltip-content{
+            // min-width: 9rem;
+            min-width:auto;
+            text-align: center;
+        }
+    }
+} 
+
+//Gallery Popup Arrow
+.table-responsive{
+    table{
+        td{
+            a{
+                box-shadow: none;
+                margin: inherit;
+                text-align: center;
+            }
+        }
+    }
+}
+.mfp-container{
+    .mfp-arrow{
+        &.mfp-arrow-left{
+            &:after{
+                border-right-color: $white-color;
+            }
+        }
+        &.mfp-arrow-right{
+            &:after{
+                border-left-color: $white-color;
+            }
+        }
+    }
+}
+
+
+// Popup Map
+.popup-map{
+    img{
+        width: 100%;
+    }
+}
+
+.show-more{
+    text-decoration: none;
+    color: $primary-color;
+}
+
+

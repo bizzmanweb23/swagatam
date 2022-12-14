@@ -1,0 +1,82 @@
+//
+// Progress bars
+// *******************************
+.progress-bar{
+    @include border-radius($border-radius);
+    background-color: lighten($black, 90%);
+    color: $white-color;
+    >div{
+        padding: $padding-primary-vertical $padding-primary-horizontal;
+        background-color: $primary-color;
+        font-size: $progress-font-size;
+        text-align: right;
+        @include border-radius($border-radius);
+        position: relative;
+        @include transition(width 0.3s ease);
+    }
+
+    &.stripes{
+        >div{
+            @include gradient-striped(rgba(255,255,255,.15), 45deg);
+            background-size: 40px 40px;
+            animation:move 1s linear infinite;
+        }
+    }
+    &.slide{
+        >div:after{
+            content:'';
+            opacity:0;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:$white-color;
+            @include border-radius($border-radius);
+            -webkit-animation:progress-active 2s ease infinite;
+            animation:progress-slide 2s ease infinite;
+        }
+    }
+}
+
+
+@-webkit-keyframes move {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 40px 0;
+    }
+}
+
+@-moz-keyframes move {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 40px 0;
+    }
+}
+
+
+@-webkit-keyframes progress-slide{
+    0%{
+        @include opacity(0.3);
+        width:0;
+    }
+    100%{
+        @include opacity(0);
+        width:100%;
+    }
+}
+@keyframes progress-slide{
+    0%{
+        @include opacity(0.3);
+        width:0;
+    }
+    100%{
+        @include opacity(0);
+        width:100%;
+    }
+}
+

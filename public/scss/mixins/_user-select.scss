@@ -1,0 +1,7 @@
+// User select
+
+@mixin user-select($select) {
+        -ms-user-select: $select; // IE10+
+            user-select: $select;
+  }
+  
